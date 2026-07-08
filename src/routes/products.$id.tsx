@@ -47,7 +47,7 @@ const availabilityLabel = {
 } as const;
 
 function ProductDetail() {
-  const { product } = Route.useLoaderData();
+  const { product } = Route.useLoaderData() as { product: Product };
   const cat = categories.find((c) => c.slug === product.category);
   const related = getRelated(product);
   const gallery = [product.image, product.image, product.image];
