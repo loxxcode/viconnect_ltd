@@ -51,12 +51,11 @@ function ProductsPage() {
 
   const update = (patch: Record<string, string | undefined>) => {
     navigate({
-      search: (prev) => {
-        const next = { ...prev, ...patch };
-        // clear "all" placeholders from URL
-        (Object.keys(next) as Array<keyof typeof next>).forEach((k) => {
+      search: (prev: z.infer<typeof searchSchema>) => {
+        const next: Record<string, string | undefined> = { ...prev, ...patch };
+        for (const k of Object.keys(next)) {
           if (next[k] === "all" || next[k] === "") next[k] = undefined;
-        });
+        }
         return next;
       },
     });
