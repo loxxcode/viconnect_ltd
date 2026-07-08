@@ -7,8 +7,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ProductCard } from "@/components/ProductCard";
 import { categories, getProduct, getRelated } from "@/data/catalog";
 
+import type { Product } from "@/data/catalog";
+
 export const Route = createFileRoute("/products/$id")({
-  loader: ({ params }) => {
+  loader: ({ params }): { product: Product } => {
     const product = getProduct(params.id);
     if (!product) throw notFound();
     return { product };
