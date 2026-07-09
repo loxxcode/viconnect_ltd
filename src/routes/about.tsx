@@ -97,45 +97,6 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="container-page py-14">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold flex items-center justify-center gap-2">
-            <Users className="size-7 text-primary" /> Meet the Team
-          </h2>
-          <p className="text-muted-foreground mt-2">The people behind every install and support call.</p>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {team.map((m) => (
-            <Card key={m.name} className="card-hover overflow-hidden pt-0">
-              <div className="aspect-square overflow-hidden bg-muted">
-                <img src={m.photo} alt={m.name} className="w-full h-full object-cover" loading="lazy" />
-              </div>
-              <CardContent>
-                <div className="font-semibold">{m.name}</div>
-                <div className="text-sm text-muted-foreground">{m.role}</div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      <section className="gradient-brand text-primary-foreground">
-        <div className="container-page py-14 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            { end: 1500, suffix: "+", label: "Products supplied" },
-            { end: 800, suffix: "+", label: "Happy customers" },
-            { end: 250, suffix: "+", label: "Projects delivered" },
-            { end: 98, suffix: "%", label: "Satisfaction rate" },
-          ].map((s) => (
-            <div key={s.label}>
-              <div className="text-4xl md:text-5xl font-bold">
-                <CountUp end={s.end} suffix={s.suffix} />
-              </div>
-              <div className="text-sm opacity-90 mt-2">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }
