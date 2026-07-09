@@ -4,16 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ProductCard } from "@/components/ProductCard";
-import { CategoryCard } from "@/components/CategoryCard";
 import { CountUp } from "@/components/CountUp";
-import { categories, products } from "@/data/catalog";
+import { products } from "@/data/catalog";
+import heroImage from "@/assets/hero.jpg";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const featuredCategories = ["computers", "printers"];
+
 
 const benefits = [
   { Icon: ShieldCheck, title: "Genuine Products", text: "Sourced from verified manufacturers and distributors." },
@@ -30,7 +30,6 @@ const testimonials = [
 
 function HomePage() {
   const featured = products.slice(0, 8);
-  const cats = categories.filter((c) => featuredCategories.includes(c.slug));
 
   return (
     <>
@@ -74,8 +73,8 @@ function HomePage() {
           <div className="relative reveal">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden border shadow-glow">
               <img
-                src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1000&q=70"
-                alt="Networking rack and equipment"
+                src={heroImage}
+                alt="Laptop and printer on a modern office desk"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -89,23 +88,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Featured categories */}
-      <section className="container-page py-16">
-        <div className="flex items-end justify-between mb-8 gap-4 flex-wrap">
-          <div>
-            <h2 className="text-3xl font-bold">Featured Categories</h2>
-            <p className="text-muted-foreground mt-2">Explore our most popular product ranges.</p>
-          </div>
-          <Button asChild variant="ghost">
-            <Link to="/categories">View all →</Link>
-          </Button>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {cats.map((c) => (
-            <CategoryCard key={c.slug} category={c} />
-          ))}
-        </div>
-      </section>
 
       {/* Why Choose Us */}
       <section className="bg-secondary/40 border-y">
