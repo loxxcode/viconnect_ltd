@@ -2,12 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Linkedin, Mail, MessageCircle, Phone, Zap } from "lucide-react";
 
 const productCats = [
-  { slug: "network-switches", name: "Network Switches" },
-  { slug: "routers", name: "Routers" },
-  { slug: "cctv-cameras", name: "CCTV Cameras" },
-  { slug: "wifi-access-points", name: "WiFi Access Points" },
-  { slug: "arduino-boards", name: "Arduino Boards" },
-  { slug: "raspberry-pi", name: "Raspberry Pi" },
+  { slug: "computers", name: "Computers" },
+  { slug: "printers", name: "Printers" },
 ];
 
 const services = [
