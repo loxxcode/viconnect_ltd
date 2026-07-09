@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const featuredCategories = ["network-switches", "routers", "cctv-cameras", "wifi-access-points", "arduino-boards", "raspberry-pi", "ssds", "monitors"];
+const featuredCategories = ["computers", "printers"];
 
 const benefits = [
   { Icon: ShieldCheck, title: "Genuine Products", text: "Sourced from verified manufacturers and distributors." },
