@@ -1,11 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowLeft, CheckCircle2, Mail, Phone } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ProductCard } from "@/components/ProductCard";
-import { categories, getProduct, getRelated } from "@/data/catalog";
+import { categories, formatRwf, getProduct, getRelated } from "@/data/catalog";
 
 import type { Product } from "@/data/catalog";
 
@@ -40,19 +39,12 @@ export const Route = createFileRoute("/products/$id")({
   component: ProductDetail,
 });
 
-const availabilityLabel = {
-  "in-stock": { label: "In Stock", className: "bg-primary/15 text-primary border-primary/30" },
-  "low-stock": { label: "Low Stock", className: "bg-amber-500/15 text-amber-600 border-amber-500/30" },
-  "out-of-stock": { label: "Out of Stock", className: "bg-destructive/15 text-destructive border-destructive/30" },
-} as const;
-
 function ProductDetail() {
   const { product } = Route.useLoaderData() as { product: Product };
   const cat = categories.find((c) => c.slug === product.category);
   const related = getRelated(product);
   const gallery = [product.image, product.image, product.image];
   const [active, setActive] = useState(0);
-  const avail = availabilityLabel[product.availability];
 
   return (
     <div className="container-page py-10">
@@ -85,10 +77,9 @@ function ProductDetail() {
         <div>
           <div className="flex items-center gap-3 mb-3">
             <span className="text-xs uppercase tracking-wide text-muted-foreground">{cat?.name}</span>
-            <Badge variant="outline" className={avail.className}>{avail.label}</Badge>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold leading-tight">{product.name}</h1>
-          <div className="mt-4 text-4xl font-bold text-primary">${product.price.toFixed(2)}</div>
+          <div className="mt-4 text-4xl font-bold text-primary">{formatRwf(product.price)}</div>
           <p className="mt-5 text-muted-foreground leading-relaxed">{product.description}</p>
 
           <div className="mt-6">

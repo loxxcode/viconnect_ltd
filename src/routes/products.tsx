@@ -17,7 +17,6 @@ import { brands, categories, products } from "@/data/catalog";
 const searchSchema = z.object({
   category: z.string().optional(),
   brand: z.string().optional(),
-  availability: z.string().optional(),
   q: z.string().optional(),
   sort: z.string().optional(),
 });
@@ -27,9 +26,9 @@ export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
       { title: "Products — VI CONNECT NETWORKSERVICES LTD" },
-      { name: "description", content: "Browse our full catalog of networking equipment, CCTV systems, computer accessories and electronic components." },
+      { name: "description", content: "Browse our catalog of computers and printers for home, school and business." },
       { property: "og:title", content: "Products — VI CONNECT NETWORKSERVICES LTD" },
-      { property: "og:description", content: "Browse our full catalog of networking equipment, CCTV systems and electronic components." },
+      { property: "og:description", content: "Browse our catalog of computers and printers." },
     ],
   }),
   component: ProductsPage,
@@ -46,7 +45,6 @@ function ProductsPage() {
 
   const category = params.category ?? "all";
   const brand = params.brand ?? "all";
-  const availability = params.availability ?? "all";
   const sort = params.sort ?? "newest";
 
   const update = (patch: Record<string, string | undefined>) => {
@@ -66,7 +64,6 @@ function ProductsPage() {
     let list = [...products];
     if (category !== "all") list = list.filter((p) => p.category === category);
     if (brand !== "all") list = list.filter((p) => p.brand === brand);
-    if (availability !== "all") list = list.filter((p) => p.availability === availability);
     if (q.trim()) {
       const needle = q.toLowerCase();
       list = list.filter(
@@ -90,7 +87,7 @@ function ProductsPage() {
         list.sort((a, b) => +new Date(b.createdAt) - +new Date(a.createdAt));
     }
     return list;
-  }, [category, brand, availability, sort, q]);
+  }, [category, brand, sort, q]);
 
   const shown = filtered.slice(0, visible);
 
@@ -104,7 +101,7 @@ function ProductsPage() {
       </div>
 
       {/* Filters */}
-      <div className="grid gap-3 md:grid-cols-[1fr_repeat(4,minmax(0,180px))] mb-8">
+      <div className="grid gap-3 md:grid-cols-[1fr_repeat(3,minmax(0,180px))] mb-8">
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
           <Input
@@ -135,15 +132,6 @@ function ProductsPage() {
             {brands.map((b) => (
               <SelectItem key={b} value={b}>{b}</SelectItem>
             ))}
-          </SelectContent>
-        </Select>
-        <Select value={availability} onValueChange={(v) => update({ availability: v })}>
-          <SelectTrigger className="h-11"><SelectValue placeholder="Availability" /></SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">Any Availability</SelectItem>
-            <SelectItem value="in-stock">In Stock</SelectItem>
-            <SelectItem value="low-stock">Low Stock</SelectItem>
-            <SelectItem value="out-of-stock">Out of Stock</SelectItem>
           </SelectContent>
         </Select>
         <Select value={sort} onValueChange={(v) => update({ sort: v })}>
