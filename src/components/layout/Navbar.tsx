@@ -23,9 +23,9 @@ const links = [
 function Logo() {
   return (
     <Link to="/" className="flex items-center gap-2 group">
-      <span className="grid place-items-center size-9 rounded-lg gradient-brand text-primary-foreground shadow-soft group-hover:scale-105 transition-transform">
+      {/* <span className="grid place-items-center size-9 rounded-lg gradient-brand text-primary-foreground shadow-soft group-hover:scale-105 transition-transform">
         <Zap className="size-5" />
-      </span>
+      </span> */}
       <span className="flex flex-col leading-tight">
         <span className="font-display font-bold text-sm sm:text-base">VI CONNECT</span>
         <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
@@ -54,7 +54,7 @@ function ThemeToggle() {
 export function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="container-page flex items-center justify-between h-16">
         <Logo />
         <nav className="hidden md:flex items-center gap-1">
