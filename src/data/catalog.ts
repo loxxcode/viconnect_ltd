@@ -1,6 +1,15 @@
 // Static catalog for VI CONNECT NETWORKSERVICES LTD.
 // No backend — everything is served from this module.
 
+import laptopPro from "@/assets/laptop-pro.jpg";
+import desktopTower from "@/assets/desktop-tower.jpg";
+import allInOne from "@/assets/all-in-one.jpg";
+import gamingLaptop from "@/assets/gaming-laptop.jpg";
+import laserPrinter from "@/assets/laser-printer.jpg";
+import inkjetPrinter from "@/assets/inkjet-printer.jpg";
+import multifunctionPrinter from "@/assets/multifunction-printer.jpg";
+import photoPrinter from "@/assets/photo-printer.jpg";
+
 export type Category = {
   slug: string;
   name: string;
@@ -13,120 +22,233 @@ export type Product = {
   name: string;
   category: string; // category slug
   brand: string;
-  price: number; // USD
-  availability: "in-stock" | "low-stock" | "out-of-stock";
-  createdAt: string; // ISO for "newest" sort
-  image: string; // unsplash keyword-based URL
+  price: number; // RWF
+  createdAt: string;
+  image: string;
   description: string;
   features: string[];
   specs: Record<string, string>;
 };
 
 export const categories: Category[] = [
-  { slug: "network-switches", name: "Network Switches", description: "Managed and unmanaged switches for every scale.", icon: "Network" },
-  { slug: "routers", name: "Routers", description: "Enterprise and SOHO routers for reliable connectivity.", icon: "Router" },
-  { slug: "ethernet-cables", name: "Ethernet Cables", description: "Cat5e, Cat6, Cat6a patch and bulk cables.", icon: "Cable" },
-  { slug: "fiber-optic-cables", name: "Fiber Optic Cables", description: "Single-mode and multi-mode fiber solutions.", icon: "Radio" },
-  { slug: "rj45-connectors", name: "RJ45 Connectors", description: "Shielded and unshielded modular plugs.", icon: "Plug" },
-  { slug: "crimping-tools", name: "Crimping Tools", description: "Professional-grade termination tools.", icon: "Wrench" },
-  { slug: "patch-panels", name: "Patch Panels", description: "Cat6/Cat6a rack-mount patch panels.", icon: "LayoutGrid" },
-  { slug: "wifi-access-points", name: "WiFi Access Points", description: "WiFi 6 & 6E indoor / outdoor APs.", icon: "Wifi" },
-  { slug: "cctv-cameras", name: "CCTV Cameras", description: "IP and analog surveillance cameras.", icon: "Camera" },
-  { slug: "dvr-nvr", name: "DVR / NVR Systems", description: "Recording systems with remote access.", icon: "Video" },
-  { slug: "hard-drives", name: "Hard Drives", description: "HDD storage for surveillance and servers.", icon: "HardDrive" },
-  { slug: "ssds", name: "SSDs", description: "NVMe and SATA solid state drives.", icon: "HardDrive" },
-  { slug: "ram-modules", name: "RAM Modules", description: "DDR4 & DDR5 memory kits.", icon: "MemoryStick" },
-  { slug: "motherboards", name: "Motherboards", description: "Consumer and workstation motherboards.", icon: "CircuitBoard" },
-  { slug: "power-supplies", name: "Power Supplies", description: "80+ certified PSUs.", icon: "Zap" },
-  { slug: "ups-systems", name: "UPS Systems", description: "Battery backup and surge protection.", icon: "BatteryCharging" },
-  { slug: "computer-cases", name: "Computer Cases", description: "Airflow-optimized PC chassis.", icon: "Box" },
-  { slug: "cooling-fans", name: "Cooling Fans", description: "Silent case and CPU fans.", icon: "Fan" },
-  { slug: "hdmi-cables", name: "HDMI Cables", description: "4K & 8K certified HDMI cables.", icon: "Cable" },
-  { slug: "usb-devices", name: "USB Devices", description: "Hubs, adapters and flash drives.", icon: "Usb" },
-  { slug: "keyboards", name: "Keyboards", description: "Mechanical and office keyboards.", icon: "Keyboard" },
-  { slug: "mouse", name: "Mouse", description: "Wired and wireless mice.", icon: "Mouse" },
-  { slug: "monitors", name: "Monitors", description: "Business and gaming displays.", icon: "Monitor" },
-  { slug: "laptop-chargers", name: "Laptop Chargers", description: "Genuine and universal chargers.", icon: "Plug2" },
-  { slug: "adapters", name: "Adapters", description: "Video, network and power adapters.", icon: "PlugZap" },
-  { slug: "electronic-components", name: "Electronic Components", description: "Resistors, capacitors, ICs and more.", icon: "Cpu" },
-  { slug: "arduino-boards", name: "Arduino Boards", description: "Genuine Arduino and compatibles.", icon: "CircuitBoard" },
-  { slug: "raspberry-pi", name: "Raspberry Pi", description: "SBCs, kits and accessories.", icon: "Cpu" },
-  { slug: "sensors", name: "Sensors", description: "Temperature, motion, distance and more.", icon: "Radar" },
-  { slug: "breadboards", name: "Breadboards", description: "Solderless prototyping boards.", icon: "LayoutGrid" },
-  { slug: "power-modules", name: "Power Modules", description: "Buck, boost and regulator modules.", icon: "Zap" },
+  {
+    slug: "computers",
+    name: "Computers",
+    description: "Laptops, desktops and all-in-one PCs for work, study and gaming.",
+    icon: "Laptop",
+  },
+  {
+    slug: "printers",
+    name: "Printers",
+    description: "Laser, inkjet and multifunction printers for home and office.",
+    icon: "Printer",
+  },
 ];
 
-// Unsplash source images — deterministic keyword URLs, no auth needed
-const img = (keywords: string, id: number) =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=800&q=70&${encodeURIComponent(keywords)}`;
-
-// A curated set of real Unsplash photo IDs relevant to tech / electronics
-const PHOTOS = [
-  "1518770660439-4636190af475", // circuit board
-  "1587202372775-e229f172b9d7", // network switch
-  "1544197150-b99a580bb7a8",     // server room
-  "1526374965328-7f61d4dc18c5", // code / tech
-  "1550009158-9ebf69173e03",     // motherboard
-  "1591799264318-7e6ef8ddb7ea", // ethernet
-  "1555617981-dac3880eac6e",     // ssd
-  "1587825140708-dfaf72ae4b04", // router
-  "1580894732444-8ecded7900cd", // cctv
-  "1601524909162-ae8725290836", // cables
-  "1517430816045-df4b7de11d1d", // keyboard
-  "1527864550417-7fd91fc51a46", // monitor
-  "1592899677977-9c10ca588bbd", // raspberry pi
-  "1573164713988-8665fc963095", // arduino
-  "1518432031352-d6fc5c10da5a", // fiber
-];
-
-const pickImg = (i: number) => `https://images.unsplash.com/photo-${PHOTOS[i % PHOTOS.length]}?auto=format&fit=crop&w=900&q=70`;
-
-const BRANDS = ["Cisco", "TP-Link", "Ubiquiti", "D-Link", "MikroTik", "HP", "Dell", "Kingston", "Seagate", "WD", "Corsair", "Hikvision", "Dahua", "APC", "Arduino", "Raspberry Pi Foundation"];
-
-// Programmatically build ~60 sample products across categories.
-function makeProducts(): Product[] {
-  const list: Product[] = [];
-  let idx = 0;
-  const now = Date.now();
-  categories.slice(0, 20).forEach((cat, ci) => {
-    // 2–3 products per category (first 20 categories) — keeps catalog rich but static-file small
-    const count = ci % 3 === 0 ? 3 : 2;
-    for (let n = 0; n < count; n++) {
-      const brand = BRANDS[(ci + n) % BRANDS.length];
-      const price = Math.round((15 + (idx % 40) * 12 + n * 7) * 100) / 100;
-      const availStates: Product["availability"][] = ["in-stock", "in-stock", "low-stock", "out-of-stock"];
-      const avail = availStates[(ci + n) % availStates.length];
-      list.push({
-        id: `${cat.slug}-${n + 1}`,
-        name: `${brand} ${cat.name.replace(/s$/, "")} ${String.fromCharCode(65 + n)}${100 + idx}`,
-        category: cat.slug,
-        brand,
-        price,
-        availability: avail,
-        createdAt: new Date(now - idx * 86400000).toISOString(),
-        image: pickImg(idx),
-        description: `Professional-grade ${cat.name.toLowerCase()} from ${brand}. Engineered for reliability in demanding business, educational and residential environments.`,
-        features: [
-          "Industry-standard compliance and certifications",
-          "Durable build quality for long-term deployments",
-          "Compatible with common networking and computing setups",
-          "Backed by manufacturer warranty",
-        ],
-        specs: {
-          Brand: brand,
-          Category: cat.name,
-          Warranty: "12 months",
-          Origin: "Imported",
-          SKU: `VC-${cat.slug.toUpperCase().slice(0, 4)}-${1000 + idx}`,
-        },
-      });
-      idx++;
-    }
-  });
-  return list;
+// Format a number as Rwandan Francs
+export function formatRwf(amount: number): string {
+  return `RWF ${amount.toLocaleString("en-US")}`;
 }
 
-export const products: Product[] = makeProducts();
+export const products: Product[] = [
+  {
+    id: "laptop-pro-14",
+    name: "VI Connect Pro Laptop 14\"",
+    category: "computers",
+    brand: "HP",
+    price: 850000,
+    createdAt: "2026-06-01T00:00:00.000Z",
+    image: laptopPro,
+    description:
+      "Slim and lightweight 14-inch business laptop with Intel Core i5, 8GB RAM and 512GB SSD. Ideal for professionals, students and everyday productivity.",
+    features: [
+      "Intel Core i5 processor",
+      "8GB DDR4 RAM, 512GB NVMe SSD",
+      "14-inch Full HD display",
+      "Backlit keyboard & fingerprint reader",
+    ],
+    specs: {
+      Brand: "HP",
+      Processor: "Intel Core i5 (12th gen)",
+      RAM: "8GB DDR4",
+      Storage: "512GB NVMe SSD",
+      Display: "14\" Full HD",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "gaming-laptop-rgb",
+    name: "Nitro Gaming Laptop 15\" RGB",
+    category: "computers",
+    brand: "Acer",
+    price: 1650000,
+    createdAt: "2026-06-15T00:00:00.000Z",
+    image: gamingLaptop,
+    description:
+      "High-performance gaming laptop featuring RGB backlit keyboard, dedicated NVIDIA graphics and a fast 144Hz display for immersive gameplay.",
+    features: [
+      "Intel Core i7 processor",
+      "16GB DDR5 RAM, 1TB SSD",
+      "NVIDIA RTX 4060 graphics",
+      "15.6\" 144Hz FHD display",
+    ],
+    specs: {
+      Brand: "Acer",
+      Processor: "Intel Core i7 (13th gen)",
+      GPU: "NVIDIA RTX 4060 8GB",
+      RAM: "16GB DDR5",
+      Storage: "1TB NVMe SSD",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "desktop-tower-i5",
+    name: "Office Desktop Tower i5",
+    category: "computers",
+    brand: "Dell",
+    price: 620000,
+    createdAt: "2026-05-20T00:00:00.000Z",
+    image: desktopTower,
+    description:
+      "Reliable desktop tower for offices and small businesses. Comes ready to use with a solid state drive and Windows-ready configuration.",
+    features: [
+      "Intel Core i5 processor",
+      "8GB DDR4 RAM, 256GB SSD + 1TB HDD",
+      "Multiple USB & HDMI ports",
+      "Energy-efficient design",
+    ],
+    specs: {
+      Brand: "Dell",
+      Processor: "Intel Core i5",
+      RAM: "8GB DDR4",
+      Storage: "256GB SSD + 1TB HDD",
+      Ports: "USB 3.0, HDMI, VGA, RJ45",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "all-in-one-24",
+    name: "All-in-One PC 24\"",
+    category: "computers",
+    brand: "Lenovo",
+    price: 980000,
+    createdAt: "2026-05-05T00:00:00.000Z",
+    image: allInOne,
+    description:
+      "Space-saving all-in-one desktop with a crisp 24-inch display, integrated speakers and wireless keyboard & mouse combo.",
+    features: [
+      "24\" Full HD IPS display",
+      "Intel Core i5, 8GB RAM, 512GB SSD",
+      "Integrated webcam & speakers",
+      "Wireless keyboard + mouse included",
+    ],
+    specs: {
+      Brand: "Lenovo",
+      Display: "24\" Full HD IPS",
+      Processor: "Intel Core i5",
+      RAM: "8GB DDR4",
+      Storage: "512GB SSD",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "laser-printer-mono",
+    name: "Monochrome Laser Printer",
+    category: "printers",
+    brand: "HP",
+    price: 220000,
+    createdAt: "2026-06-10T00:00:00.000Z",
+    image: laserPrinter,
+    description:
+      "Fast, reliable monochrome laser printer for busy offices. Delivers crisp text at up to 22 pages per minute.",
+    features: [
+      "Print speed up to 22 ppm",
+      "Automatic duplex printing",
+      "USB & Wi-Fi connectivity",
+      "Low cost per page",
+    ],
+    specs: {
+      Brand: "HP",
+      Type: "Monochrome Laser",
+      Speed: "22 ppm",
+      Connectivity: "USB, Wi-Fi",
+      Duplex: "Yes (automatic)",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "inkjet-color-mfp",
+    name: "Color Inkjet Multifunction Printer",
+    category: "printers",
+    brand: "HP",
+    price: 310000,
+    createdAt: "2026-06-25T00:00:00.000Z",
+    image: inkjetPrinter,
+    description:
+      "Compact color inkjet that prints, scans and copies with vibrant results. Perfect for home offices and small businesses.",
+    features: [
+      "Print, scan & copy",
+      "Vivid color output",
+      "Touchscreen control panel",
+      "Wi-Fi, USB and mobile printing",
+    ],
+    specs: {
+      Brand: "HP",
+      Type: "Color Inkjet MFP",
+      Functions: "Print, Scan, Copy",
+      Connectivity: "Wi-Fi, USB, AirPrint",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "multifunction-office",
+    name: "Office Multifunction Printer A4",
+    category: "printers",
+    brand: "Canon",
+    price: 480000,
+    createdAt: "2026-04-18T00:00:00.000Z",
+    image: multifunctionPrinter,
+    description:
+      "Robust A4 multifunction printer with automatic document feeder, ideal for shared use in schools and busy offices.",
+    features: [
+      "Print, scan, copy & fax",
+      "Automatic document feeder (ADF)",
+      "Duplex printing & scanning",
+      "Ethernet & Wi-Fi networking",
+    ],
+    specs: {
+      Brand: "Canon",
+      Type: "A4 Laser Multifunction",
+      Functions: "Print, Scan, Copy, Fax",
+      Connectivity: "Ethernet, Wi-Fi, USB",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "photo-printer-compact",
+    name: "Compact Photo Printer",
+    category: "printers",
+    brand: "Epson",
+    price: 195000,
+    createdAt: "2026-03-10T00:00:00.000Z",
+    image: photoPrinter,
+    description:
+      "Portable photo printer that produces lab-quality prints at home. Wireless printing straight from your phone or camera.",
+    features: [
+      "Lab-quality photo prints",
+      "Wireless & Bluetooth printing",
+      "Compact, portable design",
+      "Direct printing from mobile devices",
+    ],
+    specs: {
+      Brand: "Epson",
+      Type: "Compact Photo Printer",
+      Connectivity: "Wi-Fi, Bluetooth, USB",
+      "Photo Size": "Up to 6x8 inch",
+      Warranty: "12 months",
+    },
+  },
+];
 
 export function getProduct(id: string): Product | undefined {
   return products.find((p) => p.id === id);
