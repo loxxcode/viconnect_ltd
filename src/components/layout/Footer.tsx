@@ -55,7 +55,7 @@ export function Footer() {
             {[
               ["/", "Home"],
               ["/products", "Products"],
-              ["/categories", "Categories"],
+              
               ["/services", "Services"],
               ["/about", "About Us"],
               ["/contact", "Contact"],

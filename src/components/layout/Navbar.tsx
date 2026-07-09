@@ -14,7 +14,7 @@ import {
 const links = [
   { to: "/", label: "Home" },
   { to: "/products", label: "Products" },
-  { to: "/categories", label: "Categories" },
+  
   { to: "/services", label: "Services" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
