@@ -23,9 +23,9 @@ const links = [
 function Logo() {
   return (
     <Link to="/" className="flex items-center gap-2 group">
-      <span className="grid place-items-center size-9 rounded-lg gradient-brand text-primary-foreground shadow-soft group-hover:scale-105 transition-transform">
+      {/* <span className="grid place-items-center size-9 rounded-lg gradient-brand text-primary-foreground shadow-soft group-hover:scale-105 transition-transform">
         <Zap className="size-5" />
-      </span>
+      </span> */}
       <span className="flex flex-col leading-tight">
         <span className="font-display font-bold text-sm sm:text-base">VI CONNECT</span>
         <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
