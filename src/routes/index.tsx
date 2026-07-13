@@ -61,7 +61,7 @@ function HomePage() {
               key={s.src}
               src={s.src}
               alt={s.alt}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1000ms] ${
                 i === slide ? "opacity-100" : "opacity-100"
               }`}
             />
