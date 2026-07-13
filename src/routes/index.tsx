@@ -90,12 +90,29 @@ function HomePage() {
             </div>
           </div>
           <div className="relative reveal">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden border shadow-glow">
-              <img
-                src={heroImage}
-                alt="Laptop and printer on a modern office desk"
-                className="w-full h-full object-cover"
-              />
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden border shadow-glow relative">
+              {heroSlides.map((s, i) => (
+                <img
+                  key={s.src}
+                  src={s.src}
+                  alt={s.alt}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                    i === slide ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              ))}
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {heroSlides.map((_, i) => (
+                  <button
+                    key={i}
+                    aria-label={`Show slide ${i + 1}`}
+                    onClick={() => setSlide(i)}
+                    className={`h-2 rounded-full transition-all ${
+                      i === slide ? "w-8 bg-primary" : "w-2 bg-white/70"
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
             <div className="absolute -bottom-6 -left-6 hidden sm:block bg-card border rounded-xl p-4 shadow-soft w-56">
               <div className="text-3xl font-bold text-primary">
