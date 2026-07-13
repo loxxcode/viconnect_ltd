@@ -24,9 +24,11 @@ const links = [
 function Logo() {
   return (
     <Link to="/" className="flex items-center gap-2 group">
-      {/* <span className="grid place-items-center size-9 rounded-lg gradient-brand text-primary-foreground shadow-soft group-hover:scale-105 transition-transform">
-        <Zap className="size-5" />
-      </span> */}
+      <img
+        src={logoAsset.url}
+        alt="VI Connect Network Services logo"
+        className="size-10 rounded-lg object-contain bg-black p-0.5 group-hover:scale-105 transition-transform"
+      />
       <span className="flex flex-col leading-tight">
         <span className="font-display font-bold text-sm sm:text-base">VI CONNECT</span>
         <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
