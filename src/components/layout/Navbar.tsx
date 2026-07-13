@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, Moon, Sun, Zap } from "lucide-react";
+import { Menu, Moon, Sun } from "lucide-react";
+import logoAsset from "@/assets/logo.jpeg.asset.json";
 import { useState } from "react";
 import { useTheme } from "@/lib/theme";
 import { Button } from "@/components/ui/button";
