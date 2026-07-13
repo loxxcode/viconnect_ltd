@@ -62,7 +62,7 @@ function HomePage() {
               src={s.src}
               alt={s.alt}
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
-                i === slide ? "opacity-50" : "opacity-0"
+                i === slide ? "opacity-1000" : "opacity-0"
               }`}
             />
           ))}
