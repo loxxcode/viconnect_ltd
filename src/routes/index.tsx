@@ -62,16 +62,16 @@ function HomePage() {
               src={s.src}
               alt={s.alt}
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
-                i === slide ? "opacity-1000" : "opacity-0"
+                i === slide ? "opacity-0" : "opacity-0"
               }`}
             />
           ))}
           {/* Dark + brand gradient overlay for readable text */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40 dark:from-background/95 dark:via-background/85 dark:to-background/50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/65 via-background/50 to-background/20 dark:from-background/65 dark:via-background/55 dark:to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
         </div>
 
-        <div className="relative container-page py-24 md:py-36 lg:py-44 max-w-3xl">
+        <div className="relative container-page py-14 md:py-26 lg:py-34 max-w-3xl">
           <span className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1 rounded-full border border-primary/40 bg-primary/15 text-primary backdrop-blur">
             <Sparkles className="size-3.5" /> VI CONNECT NETWORKSERVICES LTD
           </span>
