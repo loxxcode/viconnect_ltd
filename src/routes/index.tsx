@@ -39,6 +39,16 @@ const testimonials = [
 
 function HomePage() {
   const featured = products.slice(0, 8);
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setSlide((s) => (s + 1) % heroSlides.length);
+    }, 4500);
+    return () => clearInterval(id);
+  }, []);
+
+
 
   return (
     <>
