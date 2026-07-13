@@ -52,75 +52,68 @@ function HomePage() {
 
   return (
     <>
-      {/* Hero */}
+      {/* Hero — full-width slideshow */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute -top-32 -right-32 size-96 rounded-full bg-primary/20 blur-3xl" />
-          <div className="absolute -bottom-32 -left-32 size-96 rounded-full bg-accent/20 blur-3xl" />
+        {/* Slideshow background */}
+        <div className="absolute inset-0">
+          {heroSlides.map((s, i) => (
+            <img
+              key={s.src}
+              src={s.src}
+              alt={s.alt}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
+                i === slide ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
+          {/* Dark + brand gradient overlay for readable text */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40 dark:from-background/95 dark:via-background/85 dark:to-background/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
         </div>
-        <div className="container-page py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
-          <div className="reveal">
-            <span className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary">
-              <Sparkles className="size-3.5" /> VI CONNECT NETWORKSERVICES LTD
-            </span>
-            <h1 className="mt-5 text-4xl md:text-6xl font-bold leading-[1.05]">
-              Quality Electronic Components{" "}
-              <span className="text-gradient-brand">& Networking Solutions</span>
-            </h1>
-            <p className="mt-5 text-lg text-muted-foreground max-w-xl">
-              We provide reliable electronic parts, networking devices, computer accessories, and
-              technical solutions for businesses, technicians, students, and individuals.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild size="lg">
-                <Link to="/products">
-                  Browse Products <ArrowRight className="ml-2 size-4" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link to="/contact">Contact Us</Link>
-              </Button>
-            </div>
-            <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
-              {["Genuine parts", "Nationwide delivery", "Expert installation"].map((t) => (
-                <span key={t} className="flex items-center gap-2">
-                  <CheckCircle2 className="size-4 text-primary" /> {t}
-                </span>
-              ))}
-            </div>
+
+        <div className="relative container-page py-24 md:py-36 lg:py-44 max-w-3xl">
+          <span className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1 rounded-full border border-primary/40 bg-primary/15 text-primary backdrop-blur">
+            <Sparkles className="size-3.5" /> VI CONNECT NETWORKSERVICES LTD
+          </span>
+          <h1 className="mt-5 text-4xl md:text-6xl font-bold leading-[1.05] animate-fade-in">
+            Quality Computers{" "}
+            <span className="text-gradient-brand">& Printing Solutions</span>
+          </h1>
+          <p className="mt-5 text-lg text-muted-foreground max-w-xl">
+            We supply reliable laptops, desktops and printers for businesses, schools, technicians
+            and individuals — with expert setup and support across Rwanda.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button asChild size="lg">
+              <Link to="/products">
+                Browse Products <ArrowRight className="ml-2 size-4" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="backdrop-blur bg-background/60">
+              <Link to="/contact">Contact Us</Link>
+            </Button>
           </div>
-          <div className="relative reveal">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden border shadow-glow relative">
-              {heroSlides.map((s, i) => (
-                <img
-                  key={s.src}
-                  src={s.src}
-                  alt={s.alt}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                    i === slide ? "opacity-100" : "opacity-0"
-                  }`}
-                />
-              ))}
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                {heroSlides.map((_, i) => (
-                  <button
-                    key={i}
-                    aria-label={`Show slide ${i + 1}`}
-                    onClick={() => setSlide(i)}
-                    className={`h-2 rounded-full transition-all ${
-                      i === slide ? "w-8 bg-primary" : "w-2 bg-white/70"
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-            <div className="absolute -bottom-6 -left-6 hidden sm:block bg-card border rounded-xl p-4 shadow-soft w-56">
-              <div className="text-3xl font-bold text-primary">
-                <CountUp end={1500} suffix="+" />
-              </div>
-              <div className="text-xs text-muted-foreground">Products delivered</div>
-            </div>
+          <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
+            {["Genuine products", "Nationwide delivery", "Expert installation"].map((t) => (
+              <span key={t} className="flex items-center gap-2">
+                <CheckCircle2 className="size-4 text-primary" /> {t}
+              </span>
+            ))}
           </div>
+        </div>
+
+        {/* Slide indicators */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          {heroSlides.map((_, i) => (
+            <button
+              key={i}
+              aria-label={`Show slide ${i + 1}`}
+              onClick={() => setSlide(i)}
+              className={`h-2 rounded-full transition-all ${
+                i === slide ? "w-10 bg-primary" : "w-2 bg-foreground/40 hover:bg-foreground/60"
+              }`}
+            />
+          ))}
         </div>
       </section>
 
