@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2, Headphones, ShieldCheck, Sparkles, Star, Truck } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -7,11 +8,19 @@ import { ProductCard } from "@/components/ProductCard";
 import { CountUp } from "@/components/CountUp";
 import { products } from "@/data/catalog";
 import heroImage from "@/assets/hero.jpg";
+import heroImage2 from "@/assets/hero-2.jpg";
+import heroImage3 from "@/assets/hero-3.jpg";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
 });
+
+const heroSlides = [
+  { src: heroImage, alt: "Modern laptop and printer on office desk" },
+  { src: heroImage2, alt: "HP laptop and multifunction printer with green accent lighting" },
+  { src: heroImage3, alt: "Row of laser printers and laptops in showroom" },
+];
 
 
 
