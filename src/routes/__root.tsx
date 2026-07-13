@@ -7,6 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { Phone, MessageCircle } from "lucide-react";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
@@ -139,6 +140,26 @@ function RootComponent() {
           </main>
           <Footer />
         </div>
+
+        <div className="fixed right-4 bottom-4 z-50 flex flex-col gap-3 text-sm">
+          <a
+            href="https://wa.me/250788825646"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-600 text-white shadow-lg shadow-emerald-600/20 transition hover:bg-emerald-700"
+            aria-label="WhatsApp"
+          >
+            <MessageCircle className="size-5" />
+          </a>
+          <a
+            href="tel:0788825646"
+            className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-600 text-white shadow-lg shadow-emerald-600/20 transition hover:bg-emerald-700"
+            aria-label="Call"
+          >
+            <Phone className="size-5" />
+          </a>
+        </div>
+
         <BackToTop />
         <Toaster />
       </ThemeProvider>

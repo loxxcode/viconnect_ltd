@@ -61,14 +61,14 @@ function HomePage() {
               key={s.src}
               src={s.src}
               alt={s.alt}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1000ms] ${
-                i === slide ? "opacity-100" : "opacity-100"
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
+                i === slide ? "opacity-100" : "opacity-0"
               }`}
             />
           ))}
           {/* Dark + brand gradient overlay for readable text */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/60 to-background/20 dark:from-background/95 dark:via-background/65 dark:to-background/50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/40 to-background/0 dark:from-background/95 dark:via-background/65 dark:to-background/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/25 dark:from-background/50 to-transparent" />
         </div>
 
         <div className="relative container-page py-14 md:py-26 lg:py-34 max-w-3xl">

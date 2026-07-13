@@ -7,9 +7,9 @@ import allInOne from "@/assets/all-in-one.jpg";
 import gamingLaptop from "@/assets/gaming-laptop.jpg";
 
 // Printer product images (CDN assets)
-import hpP2055d from "@/assets/printers/hp-p2055d.jpg.asset.json";
-import hpM401 from "@/assets/printers/hp-m401.jpg.asset.json";
-import hp3101fdwe from "@/assets/printers/hp-3101fdwe.jpg.asset.json";
+import hpP2055dImg from "@/assets/printers/HP_LaserJet_P2055d_Printer.jpg";
+import hpM401Img from "@/assets/printers/HP_LaserJet_Pro_M401dn.jpg";
+import hp3101fdweImg from "@/assets/printers/HP_LaserJet_Pro MFP_3101fdwe.jpg";
 import hpM128fn from "@/assets/printers/hp-m128fn.jpg.asset.json";
 import hp2875 from "@/assets/printers/hp-2875.jpg.asset.json";
 import hpM479fdw from "@/assets/printers/hp-m479fdw.jpg.asset.json";
@@ -246,7 +246,7 @@ export const products: Product[] = [
     brand: "HP",
     price: 280000,
     createdAt: "2026-06-20T00:00:00.000Z",
-    image: hpP2055d.url,
+    image: hpP2055dImg,
     description:
       "Fast and dependable monochrome laser printer with automatic duplex printing. Ideal for busy small and medium offices.",
     features: [
@@ -271,7 +271,7 @@ export const products: Product[] = [
     brand: "HP",
     price: 340000,
     createdAt: "2026-06-18T00:00:00.000Z",
-    image: hpM401.url,
+    image: hpM401Img,
     description:
       "Business monochrome laser printer with fast first page out, network connectivity and low cost per page thanks to HP 80A toners.",
     features: [
@@ -296,7 +296,7 @@ export const products: Product[] = [
     brand: "HP",
     price: 520000,
     createdAt: "2026-06-15T00:00:00.000Z",
-    image: hp3101fdwe.url,
+    image: hp3101fdweImg,
     description:
       "All-in-one monochrome laser MFP with print, scan, copy and fax. Wireless connectivity and HP+ smart features for modern offices.",
     features: [

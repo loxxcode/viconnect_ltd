@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, Moon, Sun } from "lucide-react";
-import logoAsset from "@/assets/logo.jpeg.asset.json";
+import logoImage from "@/assets/logo.jpeg";
 import { useState } from "react";
 import { useTheme } from "@/lib/theme";
 import { Button } from "@/components/ui/button";
@@ -25,7 +25,7 @@ function Logo() {
   return (
     <Link to="/" className="flex items-center gap-2 group">
       <img
-        src={logoAsset.url}
+        src={logoImage}
         alt="VI Connect Network Services logo"
         className="size-10 rounded-lg object-contain bg-black p-0.5 group-hover:scale-105 transition-transform"
       />
