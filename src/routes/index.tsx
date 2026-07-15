@@ -61,25 +61,21 @@ function HomePage() {
               key={s.src}
               src={s.src}
               alt={s.alt}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1200 ${
                 i === slide ? "opacity-100" : "opacity-0"
               }`}
             />
           ))}
-          {/* Dark + brand gradient overlay for readable text */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/40 to-background/0 dark:from-background/95 dark:via-background/65 dark:to-background/50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/25 dark:from-background/50 to-transparent" />
+          {/* Minimal overlay for readable text */}
+          <div className="absolute inset-0 bg-linear-to-r from-black/20 via-black/5 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/10 to-transparent" />
         </div>
-
-        <div className="relative container-page py-14 md:py-26 lg:py-34 max-w-3xl">
-          <span className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1 rounded-full border border-primary/40 bg-primary/15 text-primary backdrop-blur">
-            <Sparkles className="size-3.5" /> VI CONNECT NETWORKSERVICES LTD
-          </span>
-          <h1 className="mt-5 text-4xl md:text-6xl font-bold leading-[1.05] animate-fade-in">
+        <div className="relative container-page py-14 md:py-20 lg:py-30 max-w-3xl">
+          <h1 className="text-4xl md:text-6xl font-bold leading-[1.05] animate-fade-in drop-shadow-lg text-white">
             Quality Computers{" "}
             <span className="text-gradient-brand">& Printing Solutions</span>
           </h1>
-          <p className="mt-5 text-lg text-muted-foreground max-w-xl">
+          <p className="mt-5 text-lg max-w-xl drop-shadow-md text-white font-medium">
             We supply reliable laptops, desktops and printers for businesses, schools, technicians
             and individuals — with expert setup and support across Rwanda.
           </p>
@@ -89,14 +85,14 @@ function HomePage() {
                 Browse Products <ArrowRight className="ml-2 size-4" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="backdrop-blur bg-background/60">
+            <Button asChild size="lg" variant="outline" className="backdrop-blur bg-white/20 border-white text-white hover:bg-white hover:text-emerald-600">
               <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
-          <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
+          <div className="mt-8 flex flex-wrap items-center gap-6 text-sm font-medium text-white drop-shadow-md">
             {["Genuine products", "Nationwide delivery", "Expert installation"].map((t) => (
               <span key={t} className="flex items-center gap-2">
-                <CheckCircle2 className="size-4 text-primary" /> {t}
+                <CheckCircle2 className="size-4 text-white" /> {t}
               </span>
             ))}
           </div>

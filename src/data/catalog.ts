@@ -4,18 +4,14 @@
 import laptopPro from "@/assets/laptop-pro.jpg";
 import desktopTower from "@/assets/desktop-tower.jpg";
 import allInOne from "@/assets/all-in-one.jpg";
-import gamingLaptop from "@/assets/gaming-laptop.jpg";
+// import gamingLaptop from "@/assets/gaming-laptop.jpg";
 
 // Printer product images (CDN assets)
 import hpP2055dImg from "@/assets/printers/HP_LaserJet_P2055d_Printer.jpg";
 import hpM401Img from "@/assets/printers/HP_LaserJet_Pro_M401dn.jpg";
 import hp3101fdweImg from "@/assets/printers/HP_LaserJet_Pro MFP_3101fdwe.jpg";
-import hpM128fn from "@/assets/printers/hp-m128fn.jpg.asset.json";
-import hp2875 from "@/assets/printers/hp-2875.jpg.asset.json";
-import hpM479fdw from "@/assets/printers/hp-m479fdw.jpg.asset.json";
-import hpM428fdw from "@/assets/printers/hp-m428fdw.jpg.asset.json";
-import epsonL805 from "@/assets/printers/epson-l805.jpg.asset.json";
-import epsonL3210 from "@/assets/printers/epson-l3210.jpg.asset.json";
+import epsonL805 from "@/assets/printers/Epson_L805_Wi-Fi_Photo_Printer.jpeg";
+import epsonL3210 from "@/assets/printers/Epson_EcoTank_L3210_Multifunction.jpg";
 
 export type Category = {
   slug: string;
@@ -162,31 +158,31 @@ export const products: Product[] = [
       Warranty: "12 months",
     },
   },
-  {
-    id: "gaming-laptop-rgb",
-    name: "Nitro Gaming Laptop 15\" RGB",
-    category: "computers",
-    brand: "Acer",
-    price: 1650000,
-    createdAt: "2026-06-15T00:00:00.000Z",
-    image: gamingLaptop,
-    description:
-      "High-performance gaming laptop featuring RGB backlit keyboard, dedicated NVIDIA graphics and a fast 144Hz display for immersive gameplay.",
-    features: [
-      "Intel Core i7 processor",
-      "16GB DDR5 RAM, 1TB SSD",
-      "NVIDIA RTX 4060 graphics",
-      "15.6\" 144Hz FHD display",
-    ],
-    specs: {
-      Brand: "Acer",
-      Processor: "Intel Core i7 (13th gen)",
-      GPU: "NVIDIA RTX 4060 8GB",
-      RAM: "16GB DDR5",
-      Storage: "1TB NVMe SSD",
-      Warranty: "12 months",
-    },
-  },
+  // {
+  //   id: "gaming-laptop-rgb",
+  //   name: "Nitro Gaming Laptop 15\" RGB",
+  //   category: "computers",
+  //   brand: "Acer",
+  //   price: 1650000,
+  //   createdAt: "2026-06-15T00:00:00.000Z",
+  //   image: gamingLaptop,
+  //   description:
+  //     "High-performance gaming laptop featuring RGB backlit keyboard, dedicated NVIDIA graphics and a fast 144Hz display for immersive gameplay.",
+  //   features: [
+  //     "Intel Core i7 processor",
+  //     "16GB DDR5 RAM, 1TB SSD",
+  //     "NVIDIA RTX 4060 graphics",
+  //     "15.6\" 144Hz FHD display",
+  //   ],
+  //   specs: {
+  //     Brand: "Acer",
+  //     Processor: "Intel Core i7 (13th gen)",
+  //     GPU: "NVIDIA RTX 4060 8GB",
+  //     RAM: "16GB DDR5",
+  //     Storage: "1TB NVMe SSD",
+  //     Warranty: "12 months",
+  //   },
+  // },
   {
     id: "desktop-tower-i5",
     name: "Office Desktop Tower i5",
@@ -313,104 +309,104 @@ export const products: Product[] = [
       Warranty: "12 months",
     },
   },
-  {
-    id: "hp-laserjet-mfp-m128fn",
-    name: "HP LaserJet Pro MFP M128fn",
-    category: "printers",
-    brand: "HP",
-    price: 420000,
-    createdAt: "2026-06-10T00:00:00.000Z",
-    image: hpM128fn.url,
-    description:
-      "Compact monochrome all-in-one printer that prints, scans, copies and faxes over Ethernet. Great for small offices and shops.",
-    features: [
-      "Print, scan, copy, fax",
-      "Automatic document feeder",
-      "Ethernet networking",
-      "Print speed up to 20 ppm",
-    ],
-    specs: {
-      Brand: "HP",
-      Model: "LaserJet Pro MFP M128fn",
-      Functions: "Print, Scan, Copy, Fax",
-      Connectivity: "Ethernet, USB",
-      Warranty: "12 months",
-    },
-  },
-  {
-    id: "hp-deskjet-2875",
-    name: "HP DeskJet Ink Advantage 2875",
-    category: "printers",
-    brand: "HP",
-    price: 145000,
-    createdAt: "2026-06-08T00:00:00.000Z",
-    image: hp2875.url,
-    description:
-      "Affordable wireless all-in-one inkjet — print, scan and copy in vibrant color from any device. Perfect for home and study.",
-    features: [
-      "Wireless print, scan, copy",
-      "Compact home design",
-      "Mobile printing via HP Smart",
-      "Vibrant color output",
-    ],
-    specs: {
-      Brand: "HP",
-      Model: "DeskJet Ink Advantage 2875",
-      Type: "Color Inkjet AIO",
-      Connectivity: "Wi-Fi, USB",
-      Warranty: "12 months",
-    },
-  },
-  {
-    id: "hp-color-laserjet-m479fdw",
-    name: "HP Color LaserJet Pro MFP M479fdw",
-    category: "printers",
-    brand: "HP",
-    price: 1250000,
-    createdAt: "2026-05-30T00:00:00.000Z",
-    image: hpM479fdw.url,
-    description:
-      "Powerful color laser multifunction printer with print, scan, copy, fax and email — dual-band Wi-Fi for busy workgroups.",
-    features: [
-      "Color laser print, scan, copy, fax, email",
-      "Dual-band Wi-Fi & Ethernet",
-      "Automatic duplex printing",
-      "Touchscreen control panel",
-    ],
-    specs: {
-      Brand: "HP",
-      Model: "Color LaserJet Pro MFP M479fdw",
-      Type: "Color Laser MFP",
-      Functions: "Print, Scan, Copy, Fax, Email",
-      Connectivity: "Wi-Fi (dual-band), Ethernet, USB",
-      Warranty: "12 months",
-    },
-  },
-  {
-    id: "hp-laserjet-pro-m428fdw",
-    name: "HP LaserJet Pro MFP M428fdw",
-    category: "printers",
-    brand: "HP",
-    price: 780000,
-    createdAt: "2026-05-25T00:00:00.000Z",
-    image: hpM428fdw.url,
-    description:
-      "Wireless A4 monochrome laser MFP with 38 ppm speed. Print, copy, scan, fax and email — built for heavy office workflows.",
-    features: [
-      "38 ppm print speed",
-      "Print, copy, scan, fax, email",
-      "Wi-Fi, Ethernet & USB",
-      "Automatic duplex + ADF",
-    ],
-    specs: {
-      Brand: "HP",
-      Model: "LaserJet Pro MFP M428fdw",
-      Type: "Monochrome Laser MFP",
-      Speed: "38 ppm",
-      Connectivity: "Wi-Fi, Ethernet, USB",
-      Warranty: "12 months",
-    },
-  },
+  // {
+  //   id: "hp-laserjet-mfp-m128fn",
+  //   name: "HP LaserJet Pro MFP M128fn",
+  //   category: "printers",
+  //   brand: "HP",
+  //   price: 420000,
+  //   createdAt: "2026-06-10T00:00:00.000Z",
+  //   image: hpM128fn.url,
+  //   description:
+  //     "Compact monochrome all-in-one printer that prints, scans, copies and faxes over Ethernet. Great for small offices and shops.",
+  //   features: [
+  //     "Print, scan, copy, fax",
+  //     "Automatic document feeder",
+  //     "Ethernet networking",
+  //     "Print speed up to 20 ppm",
+  //   ],
+  //   specs: {
+  //     Brand: "HP",
+  //     Model: "LaserJet Pro MFP M128fn",
+  //     Functions: "Print, Scan, Copy, Fax",
+  //     Connectivity: "Ethernet, USB",
+  //     Warranty: "12 months",
+  //   },
+  // },
+  // {
+  //   id: "hp-deskjet-2875",
+  //   name: "HP DeskJet Ink Advantage 2875",
+  //   category: "printers",
+  //   brand: "HP",
+  //   price: 145000,
+  //   createdAt: "2026-06-08T00:00:00.000Z",
+  //   image: hp2875.url,
+  //   description:
+  //     "Affordable wireless all-in-one inkjet — print, scan and copy in vibrant color from any device. Perfect for home and study.",
+  //   features: [
+  //     "Wireless print, scan, copy",
+  //     "Compact home design",
+  //     "Mobile printing via HP Smart",
+  //     "Vibrant color output",
+  //   ],
+  //   specs: {
+  //     Brand: "HP",
+  //     Model: "DeskJet Ink Advantage 2875",
+  //     Type: "Color Inkjet AIO",
+  //     Connectivity: "Wi-Fi, USB",
+  //     Warranty: "12 months",
+  //   },
+  // },
+  // {
+  //   id: "hp-color-laserjet-m479fdw",
+  //   name: "HP Color LaserJet Pro MFP M479fdw",
+  //   category: "printers",
+  //   brand: "HP",
+  //   price: 1250000,
+  //   createdAt: "2026-05-30T00:00:00.000Z",
+  //   image: hpM479fdw.url,
+  //   description:
+  //     "Powerful color laser multifunction printer with print, scan, copy, fax and email — dual-band Wi-Fi for busy workgroups.",
+  //   features: [
+  //     "Color laser print, scan, copy, fax, email",
+  //     "Dual-band Wi-Fi & Ethernet",
+  //     "Automatic duplex printing",
+  //     "Touchscreen control panel",
+  //   ],
+  //   specs: {
+  //     Brand: "HP",
+  //     Model: "Color LaserJet Pro MFP M479fdw",
+  //     Type: "Color Laser MFP",
+  //     Functions: "Print, Scan, Copy, Fax, Email",
+  //     Connectivity: "Wi-Fi (dual-band), Ethernet, USB",
+  //     Warranty: "12 months",
+  //   },
+  // },
+  // {
+  //   id: "hp-laserjet-pro-m428fdw",
+  //   name: "HP LaserJet Pro MFP M428fdw",
+  //   category: "printers",
+  //   brand: "HP",
+  //   price: 780000,
+  //   createdAt: "2026-05-25T00:00:00.000Z",
+  //   image: hpM428fdw.url,
+  //   description:
+  //     "Wireless A4 monochrome laser MFP with 38 ppm speed. Print, copy, scan, fax and email — built for heavy office workflows.",
+  //   features: [
+  //     "38 ppm print speed",
+  //     "Print, copy, scan, fax, email",
+  //     "Wi-Fi, Ethernet & USB",
+  //     "Automatic duplex + ADF",
+  //   ],
+  //   specs: {
+  //     Brand: "HP",
+  //     Model: "LaserJet Pro MFP M428fdw",
+  //     Type: "Monochrome Laser MFP",
+  //     Speed: "38 ppm",
+  //     Connectivity: "Wi-Fi, Ethernet, USB",
+  //     Warranty: "12 months",
+  //   },
+  // },
   {
     id: "epson-l805",
     name: "Epson L805 Wi-Fi Photo Printer",
@@ -418,7 +414,7 @@ export const products: Product[] = [
     brand: "Epson",
     price: 380000,
     createdAt: "2026-05-18T00:00:00.000Z",
-    image: epsonL805.url,
+    image: epsonL805,
     description:
       "Single-function 6-color ink tank photo printer. Wireless printing with borderless, lab-quality photos at low cost per print.",
     features: [
@@ -442,7 +438,7 @@ export const products: Product[] = [
     brand: "Epson",
     price: 210000,
     createdAt: "2026-05-12T00:00:00.000Z",
-    image: epsonL3210.url,
+    image: epsonL3210,
     description:
       "Cost-effective EcoTank all-in-one — print, scan and copy with ultra-low running costs and high-yield refillable ink tanks.",
     features: [

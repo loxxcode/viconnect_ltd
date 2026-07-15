@@ -8,7 +8,7 @@ export function ProductCard({ product }: { product: Product }) {
   const cat = categories.find((c) => c.slug === product.category);
   return (
     <Card className="overflow-hidden card-hover border pt-0">
-      <div className="aspect-[4/3] overflow-hidden bg-muted">
+      <div className="aspect-4/3 overflow-hidden bg-muted">
         <img
           src={product.image}
           alt={product.name}
@@ -22,7 +22,6 @@ export function ProductCard({ product }: { product: Product }) {
         </span>
         <h3 className="font-semibold leading-snug line-clamp-2">{product.name}</h3>
         <p className="text-sm text-muted-foreground line-clamp-2">{product.description}</p>
-        <div className="pt-1 text-lg font-bold text-primary">{formatRwf(product.price)}</div>
       </CardContent>
       <CardFooter>
         <Button asChild className="w-full" variant="default">

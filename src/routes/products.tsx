@@ -25,7 +25,7 @@ export const Route = createFileRoute("/products")({
   validateSearch: searchSchema,
   head: () => ({
     meta: [
-      { title: "Products — VI CONNECT NETWORKSERVICES LTD" },
+      { title: "Products — VI CONNECT NETWORK SERVICES LTD" },
       { name: "description", content: "Browse our catalog of computers and printers for home, school and business." },
       { property: "og:title", content: "Products — VI CONNECT NETWORKSERVICES LTD" },
       { property: "og:description", content: "Browse our catalog of computers and printers." },
