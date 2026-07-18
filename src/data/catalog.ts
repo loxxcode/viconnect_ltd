@@ -1,10 +1,20 @@
 // Static catalog for VI CONNECT NETWORKSERVICES LTD.
 // No backend — everything is served from this module.
 
-import laptopPro from "@/assets/laptop-pro.jpg";
+import laptopPro from "@/assets/laptop_pro.jpg";
 import desktopTower from "@/assets/desktop-tower.jpg";
 import allInOne from "@/assets/all-in-one.jpg";
-// import gamingLaptop from "@/assets/gaming-laptop.jpg";
+import Smart_LED_Bulbs from "@/assets/Smart_LED_Bulbs.jpeg";
+import HP_Pavilion_15_Laptop from "@/assets/HP_Pavilion_15_Laptop.jpg";
+import Lenovo_IdeaPad_315 from "@/assets/Lenovo_IdeaPad_315.jpg";
+import cartridgeCanonToner057 from "@/assets/Cartridge_Canon_Toner057.jpg";
+import cashMachine from "@/assets/Cash_machine.jpeg";
+import desktopComputer from "@/assets/Desktop_computer.jpeg";
+import usbTypeCHub from "@/assets/usb_typec_hub.jpg";
+import wifiRouter from "@/assets/Wifi_router.jpeg";
+import jblHeadphone from "@/assets/JBL_Headphone.jpeg";
+import rfidReader from "@/assets/rfid_reader.jpeg";
+import bluetoothMouse from "@/assets/bluetoothUsbMouse.jpg";
 
 // Printer product images (CDN assets)
 import hpP2055dImg from "@/assets/printers/HP_LaserJet_P2055d_Printer.jpg";
@@ -12,6 +22,10 @@ import hpM401Img from "@/assets/printers/HP_LaserJet_Pro_M401dn.jpg";
 import hp3101fdweImg from "@/assets/printers/HP_LaserJet_Pro MFP_3101fdwe.jpg";
 import epsonL805 from "@/assets/printers/Epson_L805_Wi-Fi_Photo_Printer.jpeg";
 import epsonL3210 from "@/assets/printers/Epson_EcoTank_L3210_Multifunction.jpg";
+import npg59DrumUnit from "@/assets/printers/npg-59_drum_unit.jpeg";
+import inkjetPrinter from "@/assets/printers/inkjet_printer.jpg";
+import multifunctionPrinter from "@/assets/printers/multifunction_printer.jpg";
+import receiptPrinter from "@/assets/printers/reciept_printer.jpeg";
 
 export type Category = {
   slug: string;
@@ -56,7 +70,7 @@ export const products: Product[] = [
   // ===== COMPUTERS =====
   {
     id: "hp-elitebook-14",
-    name: "HP EliteBook 840 G10 14\"",
+    name: 'HP EliteBook 840 G10 14',
     category: "computers",
     brand: "HP",
     price: 950000,
@@ -67,7 +81,7 @@ export const products: Product[] = [
     features: [
       "Intel Core i5 (13th gen)",
       "16GB DDR5 RAM, 512GB NVMe SSD",
-      "14\" Full HD IPS anti-glare display",
+      '14" Full HD IPS anti-glare display',
       "Backlit keyboard & fingerprint reader",
     ],
     specs: {
@@ -76,7 +90,7 @@ export const products: Product[] = [
       Processor: "Intel Core i5 (13th gen)",
       RAM: "16GB DDR5",
       Storage: "512GB NVMe SSD",
-      Display: "14\" FHD IPS",
+      Display: '14" FHD IPS',
       Warranty: "12 months",
     },
   },
@@ -87,13 +101,13 @@ export const products: Product[] = [
     brand: "HP",
     price: 780000,
     createdAt: "2026-06-05T00:00:00.000Z",
-    image: laptopPro,
+    image: HP_Pavilion_15_Laptop,
     description:
       "Stylish HP Pavilion 15 for everyday productivity, study and entertainment. Powered by AMD Ryzen 5 with fast SSD storage.",
     features: [
       "AMD Ryzen 5 processor",
       "8GB DDR4 RAM, 512GB SSD",
-      "15.6\" Full HD micro-edge display",
+      '15.6" Full HD micro-edge display',
       "Wi-Fi 6 & Bluetooth 5",
     ],
     specs: {
@@ -102,7 +116,7 @@ export const products: Product[] = [
       Processor: "AMD Ryzen 5",
       RAM: "8GB DDR4",
       Storage: "512GB SSD",
-      Display: "15.6\" FHD",
+      Display: '15.6" FHD',
       Warranty: "12 months",
     },
   },
@@ -119,7 +133,7 @@ export const products: Product[] = [
     features: [
       "Intel Core i5 (13th gen)",
       "16GB DDR4 RAM, 512GB SSD",
-      "14\" Full HD IPS display",
+      '14" Full HD IPS display',
       "Spill-resistant TrackPoint keyboard",
     ],
     specs: {
@@ -128,24 +142,24 @@ export const products: Product[] = [
       Processor: "Intel Core i5",
       RAM: "16GB DDR4",
       Storage: "512GB SSD",
-      Display: "14\" FHD IPS",
+      Display: '14" FHD IPS',
       Warranty: "12 months",
     },
   },
   {
     id: "lenovo-ideapad-3",
-    name: "Lenovo IdeaPad 3 15\"",
+    name: 'Lenovo IdeaPad 3 15',
     category: "computers",
     brand: "Lenovo",
     price: 650000,
     createdAt: "2026-05-15T00:00:00.000Z",
-    image: laptopPro,
+    image: Lenovo_IdeaPad_315,
     description:
       "Affordable Lenovo IdeaPad 3 with modern design, fast SSD and comfortable full-size keyboard — perfect for students and home use.",
     features: [
       "Intel Core i3 processor",
       "8GB DDR4 RAM, 256GB SSD",
-      "15.6\" Full HD display",
+      '15.6" Full HD display',
       "Rapid Charge battery",
     ],
     specs: {
@@ -154,35 +168,40 @@ export const products: Product[] = [
       Processor: "Intel Core i3",
       RAM: "8GB DDR4",
       Storage: "256GB SSD",
-      Display: "15.6\" FHD",
+      Display: '15.6" FHD',
       Warranty: "12 months",
     },
   },
-  // {
-  //   id: "gaming-laptop-rgb",
-  //   name: "Nitro Gaming Laptop 15\" RGB",
-  //   category: "computers",
-  //   brand: "Acer",
-  //   price: 1650000,
-  //   createdAt: "2026-06-15T00:00:00.000Z",
-  //   image: gamingLaptop,
-  //   description:
-  //     "High-performance gaming laptop featuring RGB backlit keyboard, dedicated NVIDIA graphics and a fast 144Hz display for immersive gameplay.",
-  //   features: [
-  //     "Intel Core i7 processor",
-  //     "16GB DDR5 RAM, 1TB SSD",
-  //     "NVIDIA RTX 4060 graphics",
-  //     "15.6\" 144Hz FHD display",
-  //   ],
-  //   specs: {
-  //     Brand: "Acer",
-  //     Processor: "Intel Core i7 (13th gen)",
-  //     GPU: "NVIDIA RTX 4060 8GB",
-  //     RAM: "16GB DDR5",
-  //     Storage: "1TB NVMe SSD",
-  //     Warranty: "12 months",
-  //   },
-  // },
+  {
+    id: "Smart_LED_Bulbs",
+    name: "Smart LED Bulbs",
+    category: "computers",
+    brand: "River",
+    price: 1650000,
+    createdAt: "2026-06-15T00:00:00.000Z",
+    image: Smart_LED_Bulbs,
+    description:
+      "Energy-efficient smart LED bulb with Wi-Fi connectivity, customizable brightness and colors, voice assistant support, and remote control through a mobile app.",
+
+    features: [
+      "Wi-Fi enabled smart control",
+      "Customizable colors",
+      "Dimmable brightness settings",
+      "Compatible with Alexa & Google Assistant",
+    ],
+
+    specs: {
+      Brand: "Philips",
+      Type: "Smart LED Bulb",
+      Connectivity: "Wi-Fi",
+      Power: "9W",
+      Brightness: "806 Lumens",
+      Color: "RGB + Warm & Cool White",
+      Lifespan: "25,000 hours",
+      Voltage: "110V-240V",
+      Warranty: "12 months",
+    },
+  },
   {
     id: "desktop-tower-i5",
     name: "Office Desktop Tower i5",
@@ -210,7 +229,7 @@ export const products: Product[] = [
   },
   {
     id: "all-in-one-24",
-    name: "All-in-One PC 24\"",
+    name: 'All-in-One PC 24"',
     category: "computers",
     brand: "Lenovo",
     price: 980000,
@@ -219,14 +238,14 @@ export const products: Product[] = [
     description:
       "Space-saving all-in-one desktop with a crisp 24-inch display, integrated speakers and wireless keyboard & mouse combo.",
     features: [
-      "24\" Full HD IPS display",
+      '24" Full HD IPS display',
       "Intel Core i5, 8GB RAM, 512GB SSD",
       "Integrated webcam & speakers",
       "Wireless keyboard + mouse included",
     ],
     specs: {
       Brand: "Lenovo",
-      Display: "24\" Full HD IPS",
+      Display: '24" Full HD IPS',
       Processor: "Intel Core i5",
       RAM: "8GB DDR4",
       Storage: "512GB SSD",
@@ -234,7 +253,274 @@ export const products: Product[] = [
     },
   },
 
+  // ===== MISCELLANEOUS ELECTRONICS =====
+  {
+    id: "Cartridge_Canon_Toner057",
+    name: "Cartridge Canon Toner 057",
+    category: "printers",
+    brand: "Canon",
+    price: 32000,
+    createdAt: "2026-06-22T00:00:00.000Z",
+    image: cartridgeCanonToner057,
+    description:
+      "Original Canon toner cartridge for reliable black-and-white printing with sharp text and consistent output.",
+    features: [
+      "High-yield toner for office use",
+      "Sharp and consistent print quality",
+      "Designed for Canon laser printers",
+      "Easy installation and replacement",
+    ],
+    specs: {
+      Brand: "Canon",
+      Model: "Toner 057",
+      Type: "Laser Toner Cartridge",
+      Compatibility: "Canon laser printers",
+      Warranty: "6 months",
+    },
+  },
+  {
+    id: "Cash_machine",
+    name: "Cash Machine",
+    category: "computers",
+    brand: "NCR",
+    price: 1450000,
+    createdAt: "2026-06-21T00:00:00.000Z",
+    image: cashMachine,
+    description:
+      "Secure cash handling terminal designed for retail counters, quick transactions and dependable daily operation.",
+    features: [
+      "Fast card and cash processing",
+      "Durable retail-ready design",
+      "Secure transaction confirmation",
+      "Easy integration with point-of-sale systems",
+    ],
+    specs: {
+      Brand: "NCR",
+      Type: "Cash Handling Terminal",
+      Connectivity: "POS / network ready",
+      Use: "Retail and cashier counters",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "Desktop_computer",
+    name: "Desktop Computer",
+    category: "computers",
+    brand: "Dell",
+    price: 720000,
+    createdAt: "2026-06-20T00:00:00.000Z",
+    image: desktopComputer,
+    description:
+      "Reliable desktop computer for office work, web browsing and everyday productivity with modern connectivity.",
+    features: [
+      "Intel Core i5 processor",
+      "8GB RAM and SSD storage",
+      "Multiple USB and HDMI ports",
+      "Ideal for office and home use",
+    ],
+    specs: {
+      Brand: "Dell",
+      Processor: "Intel Core i5",
+      RAM: "8GB",
+      Storage: "256GB SSD",
+      Ports: "USB, HDMI, RJ45",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "usb_typec_hub",
+    name: "USB Type-C Hub",
+    category: "computers",
+    brand: "Anker",
+    price: 65000,
+    createdAt: "2026-06-19T00:00:00.000Z",
+    image: usbTypeCHub,
+    description:
+      "Compact USB Type-C hub that expands laptop connectivity with extra ports for data, display and charging.",
+    features: [
+      "Multiple USB and HDMI ports",
+      "Fast data transfer",
+      "Compact portable design",
+      "Great for laptops and ultrabooks",
+    ],
+    specs: {
+      Brand: "Anker",
+      Type: "USB Type-C Hub",
+      Ports: "4x USB + HDMI",
+      Compatibility: "Windows, macOS, Linux",
+      Warranty: "6 months",
+    },
+  },
+  {
+    id: "Wifi_router",
+    name: "WiFi Router",
+    category: "computers",
+    brand: "TP-Link",
+    price: 180000,
+    createdAt: "2026-06-18T00:00:00.000Z",
+    image: wifiRouter,
+    description:
+      "High-performance WiFi router for homes and small offices with stable coverage and strong wireless speeds.",
+    features: [
+      "Dual-band wireless coverage",
+      "Fast and stable internet sharing",
+      "Easy setup and management",
+      "Suitable for streaming and remote work",
+    ],
+    specs: {
+      Brand: "TP-Link",
+      Type: "Wireless Router",
+      Connectivity: "Wi-Fi 5 / Ethernet",
+      Coverage: "Up to 120 sqm",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "JBL_Headphone",
+    name: "JBL Headphone",
+    category: "computers",
+    brand: "JBL",
+    price: 240000,
+    createdAt: "2026-06-17T00:00:00.000Z",
+    image: jblHeadphone,
+    description:
+      "Wireless over-ear headphones with rich sound, comfortable fit and reliable Bluetooth connectivity for daily listening.",
+    features: [
+      "Deep bass and clear audio",
+      "Bluetooth wireless connection",
+      "Comfortable padded ear cups",
+      "Long battery life",
+    ],
+    specs: {
+      Brand: "JBL",
+      Type: "Wireless Headphones",
+      Connectivity: "Bluetooth",
+      Battery: "Up to 20 hours",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "rfid_reader",
+    name: "RFID Reader",
+    category: "computers",
+    brand: "HID",
+    price: 260000,
+    createdAt: "2026-06-16T00:00:00.000Z",
+    image: rfidReader,
+    description:
+      "RFID reader for secure identification, authentication and fast access control in office and retail settings.",
+    features: [
+      "Fast tag scanning",
+      "Secure access control",
+      "Compact and durable design",
+      "Easy integration with systems",
+    ],
+    specs: {
+      Brand: "HID",
+      Type: "RFID Reader",
+      Frequency: "13.56 MHz",
+      Connectivity: "USB / serial",
+      Warranty: "12 months",
+    },
+  },
+
   // ===== PRINTERS =====
+  {
+    id: "npg-59_drum_unit",
+    name: "NPG-59 Drum Unit",
+    category: "printers",
+    brand: "Canon",
+    price: 95000,
+    createdAt: "2026-06-15T00:00:00.000Z",
+    image: npg59DrumUnit,
+    description:
+      "Replacement drum unit for Canon printers, delivering dependable page output and consistent print quality.",
+    features: [
+      "Reliable imaging performance",
+      "Long-lasting drum life",
+      "Ideal for office printing",
+      "Easy replacement process",
+    ],
+    specs: {
+      Brand: "Canon",
+      Model: "NPG-59",
+      Type: "Drum Unit",
+      Compatibility: "Canon laser printers",
+      Warranty: "6 months",
+    },
+  },
+  {
+    id: "inkjet_printer",
+    name: "Inkjet Printer",
+    category: "printers",
+    brand: "Epson",
+    price: 210000,
+    createdAt: "2026-06-14T00:00:00.000Z",
+    image: inkjetPrinter,
+    description:
+      "Compact inkjet printer for everyday printing, scanning and copying at home or in a small office.",
+    features: [
+      "Color printing",
+      "Compact footprint",
+      "Affordable operating cost",
+      "Wireless or USB connectivity",
+    ],
+    specs: {
+      Brand: "Epson",
+      Type: "Inkjet Printer",
+      Connectivity: "USB / Wireless",
+      Functionality: "Print",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "multifunction_printer",
+    name: "Multifunction Printer",
+    category: "printers",
+    brand: "HP",
+    price: 450000,
+    createdAt: "2026-06-13T00:00:00.000Z",
+    image: multifunctionPrinter,
+    description:
+      "All-in-one office printer that handles print, scan and copy tasks with speed and reliability.",
+    features: [
+      "Print, scan and copy",
+      "Automatic document feeder",
+      "Built for office workloads",
+      "Network-ready operation",
+    ],
+    specs: {
+      Brand: "HP",
+      Type: "Multifunction Printer",
+      Functions: "Print, Scan, Copy",
+      Connectivity: "USB / Network",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "reciept_printer",
+    name: "Receipt Printer",
+    category: "printers",
+    brand: "POSIflex",
+    price: 160000,
+    createdAt: "2026-06-12T00:00:00.000Z",
+    image: receiptPrinter,
+    description:
+      "Compact receipt printer for retail counters and hospitality environments that need fast, reliable printing.",
+    features: [
+      "Fast thermal receipt printing",
+      "Compact counter-friendly design",
+      "Low maintenance operation",
+      "Ideal for POS systems",
+    ],
+    specs: {
+      Brand: "POSIflex",
+      Type: "Receipt Printer",
+      Printing: "Thermal",
+      Connectivity: "USB / Serial",
+      Warranty: "12 months",
+    },
+  },
   {
     id: "hp-laserjet-p2055d",
     name: "HP LaserJet P2055d Printer",
@@ -309,30 +595,33 @@ export const products: Product[] = [
       Warranty: "12 months",
     },
   },
-  // {
-  //   id: "hp-laserjet-mfp-m128fn",
-  //   name: "HP LaserJet Pro MFP M128fn",
-  //   category: "printers",
-  //   brand: "HP",
-  //   price: 420000,
-  //   createdAt: "2026-06-10T00:00:00.000Z",
-  //   image: hpM128fn.url,
-  //   description:
-  //     "Compact monochrome all-in-one printer that prints, scans, copies and faxes over Ethernet. Great for small offices and shops.",
-  //   features: [
-  //     "Print, scan, copy, fax",
-  //     "Automatic document feeder",
-  //     "Ethernet networking",
-  //     "Print speed up to 20 ppm",
-  //   ],
-  //   specs: {
-  //     Brand: "HP",
-  //     Model: "LaserJet Pro MFP M128fn",
-  //     Functions: "Print, Scan, Copy, Fax",
-  //     Connectivity: "Ethernet, USB",
-  //     Warranty: "12 months",
-  //   },
-  // },
+  {
+  id: "bluetooth-slim-silent-wireless-mouse",
+  name: "Bluetooth Slim Silent Wireless and USB Mouse RGB",
+  category: "computer-accessories",
+  brand: "Generic",
+  price: 25000,
+  createdAt: "2026-06-10T00:00:00.000Z",
+  image: bluetoothMouse,
+  description:
+    "Slim and rechargeable wireless Bluetooth mouse with RGB backlighting, silent clicks, adjustable DPI settings, and a USB receiver for reliable connectivity. Compatible with laptops, Macs, Windows PCs, Android devices, and tablets.",
+  features: [
+    "Bluetooth + 2.4GHz USB receiver connectivity",
+    "Silent click design for quiet operation",
+    "Rechargeable built-in battery",
+    "RGB backlit lighting effects",
+    "3 adjustable DPI levels (800/1200/1600 DPI)",
+    "Slim and lightweight ergonomic design",
+  ],
+  specs: {
+    Brand: "Generic",
+    Model: "Slim Silent Wireless Mouse",
+    Connectivity: "Bluetooth 5.0 + 2.4GHz USB Receiver",
+    DPI: "800 / 1200 / 1600",
+    Compatibility: "Windows, macOS, Android, Laptop, PC, Mac",
+    Warranty: "6 months",
+  },
+},
   // {
   //   id: "hp-deskjet-2875",
   //   name: "HP DeskJet Ink Advantage 2875",
