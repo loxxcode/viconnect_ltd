@@ -26,6 +26,7 @@ import npg59DrumUnit from "@/assets/printers/npg-59_drum_unit.jpeg";
 import inkjetPrinter from "@/assets/printers/inkjet_printer.jpg";
 import multifunctionPrinter from "@/assets/printers/multifunction_printer.jpg";
 import receiptPrinter from "@/assets/printers/reciept_printer.jpeg";
+import LenovoThinkPadE14 from "@/assets/Lenovo_ThinkPad_E14.jpg"
 
 export type Category = {
   slug: string;
@@ -127,7 +128,7 @@ export const products: Product[] = [
     brand: "Lenovo",
     price: 890000,
     createdAt: "2026-05-28T00:00:00.000Z",
-    image: allInOne,
+    image: LenovoThinkPadE14,
     description:
       "Rugged Lenovo ThinkPad E14 business laptop with legendary keyboard, MIL-STD durability and Intel Core i5 performance.",
     features: [

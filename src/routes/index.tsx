@@ -71,12 +71,12 @@ function HomePage() {
           <div className="absolute inset-0 bg-linear-to-t from-black/10 to-transparent" />
         </div>
         <div className="relative container-page py-14 md:py-20 lg:py-30 max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold leading-[1.05] animate-fade-in drop-shadow-lg text-white">
+          <h1 className="text-2xl md:text-4xl font-bold leading-[1.05] animate-fade-in drop-shadow-lg text-white">
             Quality Computers{" "}
             <span className="text-gradient-brand">& Printing Solutions</span>
           </h1>
-          <p className="mt-5 text-lg max-w-xl drop-shadow-md text-white font-medium">
-            We supply reliable laptops, desktops and printers for businesses, schools, technicians
+          <p className="mt-5 text-md max-w-xl drop-shadow-md text-white font-medium">
+            We supply reliable computers, printers, CCTV cameras,IT services and accessories for businesses, schools, institutions
             and individuals — with expert setup and support across Rwanda.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -89,13 +89,7 @@ function HomePage() {
               <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
-          <div className="mt-8 flex flex-wrap items-center gap-6 text-sm font-medium text-white drop-shadow-md">
-            {["Genuine products", "Nationwide delivery", "Expert installation"].map((t) => (
-              <span key={t} className="flex items-center gap-2">
-                <CheckCircle2 className="size-4 text-white" /> {t}
-              </span>
-            ))}
-          </div>
+          
         </div>
 
         {/* Slide indicators */}
