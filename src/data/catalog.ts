@@ -12,7 +12,7 @@ import cashMachine from "@/assets/Cash_machine.jpeg";
 import desktopComputer from "@/assets/Desktop_computer.jpeg";
 import usbTypeCHub from "@/assets/usb_typec_hub.jpg";
 import wifiRouter from "@/assets/Wifi_router.jpeg";
-import jblHeadphone from "@/assets/JBL_Headphone.jpeg";
+import jblHeadphone from "@/assets/JBL_Headphone.jpg";
 import rfidReader from "@/assets/rfid_reader.jpeg";
 import bluetoothMouse from "@/assets/bluetoothUsbMouse.jpg";
 
