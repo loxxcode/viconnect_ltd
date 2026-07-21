@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+  import { Link } from "@tanstack/react-router";
 import logoImage from "@/assets/logo.jpeg";
 import { Facebook, Instagram, Linkedin, Mail, MessageCircle, Phone, Zap } from "lucide-react";
 
@@ -37,7 +37,7 @@ export function Footer() {
             </span>
           </div>
           <p className="text-sm text-emerald-100">
-            Quality electronic components and networking solutions for businesses, technicians and
+            Quality electronic components and networking solutions for businesses, institutions and
             individuals.
           </p>
           <div className="flex gap-3 mt-5">
