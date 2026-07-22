@@ -1,5 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, Headphones, ShieldCheck, Sparkles, Star, Truck } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Headphones,
+  ShieldCheck,
+  Sparkles,
+  Star,
+  Truck,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -22,19 +30,45 @@ const heroSlides = [
   { src: heroImage3, alt: "Row of laser printers and laptops in showroom" },
 ];
 
-
-
 const benefits = [
-  { Icon: ShieldCheck, title: "Genuine Products", text: "Sourced from verified manufacturers and distributors." },
-  { Icon: Truck, title: "Fast Delivery", text: "Nationwide dispatch with careful, protective packaging." },
-  { Icon: Headphones, title: "Expert Support", text: "Technicians on hand to help you choose and install." },
-  { Icon: Sparkles, title: "Competitive Pricing", text: "Fair prices for individuals, schools and businesses." },
+  {
+    Icon: ShieldCheck,
+    title: "Genuine Products",
+    text: "Sourced from verified manufacturers and distributors.",
+  },
+  {
+    Icon: Truck,
+    title: "Fast Delivery",
+    text: "Nationwide dispatch with careful, protective packaging.",
+  },
+  {
+    Icon: Headphones,
+    title: "Expert Support",
+    text: "Technicians on hand to help you choose and install.",
+  },
+  {
+    Icon: Sparkles,
+    title: "Competitive Pricing",
+    text: "Fair prices for individuals, schools and businesses.",
+  },
 ];
 
 const testimonials = [
-  { name: "Jean-Paul K.", role: "IT Manager, Kigali", text: "VI CONNECT set up our office network end-to-end. Fast, clean and professional work." },
-  { name: "Aline M.", role: "School Administrator", text: "They supplied and installed our CCTV system in two days. Everything works perfectly." },
-  { name: "Eric N.", role: "Freelance Electrician", text: "My go-to shop for Arduino boards, sensors and networking parts. Great prices too." },
+  {
+    name: "Jean-Paul K.",
+    role: "IT Manager, Kigali",
+    text: "VI CONNECT set up our office network end-to-end. Fast, clean and professional work.",
+  },
+  {
+    name: "Aline M.",
+    role: "School Administrator",
+    text: "They supplied and installed our CCTV system in two days. Everything works perfectly.",
+  },
+  {
+    name: "Eric N.",
+    role: "Freelance Electrician",
+    text: "My go-to shop for Arduino boards, sensors and networking parts. Great prices too.",
+  },
 ];
 
 function HomePage() {
@@ -56,8 +90,6 @@ function HomePage() {
     }, 4500);
     return () => clearInterval(id);
   }, []);
-
-
 
   return (
     <>
@@ -81,12 +113,12 @@ function HomePage() {
         </div>
         <div className="relative container-page py-14 md:py-20 lg:py-30 max-w-3xl">
           <h1 className="text-2xl md:text-4xl font-bold leading-[1.05] animate-fade-in drop-shadow-lg text-white">
-            Quality Computers{" "}
-            <span className="text-gradient-brand">& Printing Solutions</span>
+            Quality Computers <span className="text-gradient-brand">& Printing Solutions</span>
           </h1>
           <p className="mt-5 text-md max-w-xl drop-shadow-md text-white font-medium">
-            We supply and purchase wholesale reliable computers, printers, CCTV cameras, IT services, 
-            and accessories for businesses, schools, institutions, and individuals — offering expert setup and support across Rwanda.
+            We supply and purchase wholesale reliable computers, printers, CCTV cameras, IT
+            services, and accessories for businesses, schools, institutions, and individuals —
+            offering expert setup and support across Rwanda.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg">
@@ -94,11 +126,15 @@ function HomePage() {
                 Browse Products <ArrowRight className="ml-2 size-4" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="backdrop-blur bg-white/20 border-white text-white hover:bg-white hover:text-emerald-600">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="backdrop-blur bg-white/20 border-white text-white hover:bg-white hover:text-emerald-600"
+            >
               <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
-          
         </div>
 
         {/* Slide indicators */}
@@ -116,7 +152,6 @@ function HomePage() {
         </div>
       </section>
 
-
       {/* Why Choose Us */}
       <section className="bg-secondary/40 border-y">
         <div className="container-page py-16">
@@ -129,11 +164,13 @@ function HomePage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {benefits.map(({ Icon, title, text }) => (
               <Card key={title} className="card-hover">
-                <CardContent className="p-6">
-                  <div className="grid place-items-center size-12 rounded-xl gradient-brand text-primary-foreground mb-4">
-                    <Icon className="size-6" />
+                <CardContent className="p-4">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center justify-center size-12 rounded-xl gradient-brand text-primary-foreground shrink-0">
+                      <Icon className="size-6" />
+                    </div>
+                    <h3 className="font-semibold">{title}</h3>
                   </div>
-                  <h3 className="font-semibold">{title}</h3>
                   <p className="text-sm text-muted-foreground mt-2">{text}</p>
                 </CardContent>
               </Card>
