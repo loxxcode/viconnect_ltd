@@ -4,6 +4,7 @@ import { Facebook, Instagram, Linkedin, Mail, MessageCircle, Phone, Zap } from "
 
 const productCats = [
   { slug: "computers", name: "Computers" },
+  { slug: "cctv", name: "CCTV Cameras" },
   { slug: "printers", name: "Printers" },
 ];
 

@@ -15,6 +15,12 @@ import wifiRouter from "@/assets/Wifi_router.jpeg";
 import jblHeadphone from "@/assets/JBL_Headphone.jpg";
 import rfidReader from "@/assets/rfid_reader.jpeg";
 import bluetoothMouse from "@/assets/bluetoothUsbMouse.jpg";
+import allTypeOfComputerBatteriesandItsCables from "@/assets/allTypeOfComputerBatteriesandItsCables.jpg";
+import smartVideoKit from "@/assets/smart_video_kit.jpg";
+import smartNetCamera from "@/assets/smart_net_camera.jpg";
+import televisionHdColorKit from "@/assets/telivision_hd_colorkit.jpg";
+import logitechC270HdWebcam from "@/assets/Logitech_C270_HdWebcam.jpg";
+import smartWifiCamera from "@/assets/Smart_wifi_Camera.jpg";
 
 // Printer product images (CDN assets)
 import hpP2055dImg from "@/assets/printers/HP_LaserJet_P2055d_Printer.jpg";
@@ -54,6 +60,12 @@ export const categories: Category[] = [
     name: "Computers",
     description: "Laptops, desktops and all-in-one PCs for work, study and gaming.",
     icon: "Laptop",
+  },
+  {
+    slug: "cctv",
+    name: "CCTV Cameras",
+    description: "Security cameras and monitoring kits for homes, shops and offices.",
+    icon: "Camera",
   },
   {
     slug: "printers",
@@ -254,6 +266,132 @@ export const products: Product[] = [
     },
   },
 
+  // ===== CCTV & SECURITY =====
+  {
+    id: "smart-video-kit",
+    name: "Smart Video Kit",
+    category: "cctv",
+    brand: "VI Connect",
+    price: 290000,
+    createdAt: "2026-06-24T00:00:00.000Z",
+    image: smartVideoKit,
+    description:
+      "Complete smart video monitoring kit for homes and small businesses with remote viewing and dependable surveillance coverage.",
+    features: [
+      "HD video recording",
+      "Remote mobile access",
+      "Night vision support",
+      "Easy installation and setup",
+    ],
+    specs: {
+      Brand: "VI Connect",
+      Type: "Video Surveillance Kit",
+      Resolution: "1080p",
+      Connectivity: "Wi-Fi / PoE",
+      Storage: "microSD / NVR compatible",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "smart-net-camera",
+    name: "Smart Net Camera",
+    category: "cctv",
+    brand: "VI Connect",
+    price: 185000,
+    createdAt: "2026-06-23T00:00:00.000Z",
+    image: smartNetCamera,
+    description:
+      "Compact smart network camera built for indoor monitoring, motion alerts and reliable 24/7 security coverage.",
+    features: [
+      "Live remote monitoring",
+      "Motion detection alerts",
+      "Compact indoor design",
+      "Cloud or local recording support",
+    ],
+    specs: {
+      Brand: "VI Connect",
+      Type: "Network Camera",
+      Resolution: "1080p",
+      Connectivity: "Wi-Fi",
+      Power: "DC 5V",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "television-hd-colorkit",
+    name: "Television HD ColorKit",
+    category: "cctv",
+    brand: "HD Color",
+    price: 240000,
+    createdAt: "2026-06-22T00:00:00.000Z",
+    image: televisionHdColorKit,
+    description:
+      "High-definition color surveillance solution designed for clear day and night monitoring in shops, offices and homes.",
+    features: [
+      "Sharp HD color imaging",
+      "Outdoor-ready monitoring",
+      "Weather-resistant build",
+      "Wide viewing angle",
+    ],
+    specs: {
+      Brand: "HD Color",
+      Type: "HD CCTV Camera",
+      Resolution: "4MP",
+      Connectivity: "HD-over-coax / IP",
+      Weatherproof: "Yes",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "logitech-c270-hdwebcam",
+    name: "Logitech C270 HD Webcam",
+    category: "cctv",
+    brand: "Logitech",
+    price: 65000,
+    createdAt: "2026-06-21T00:00:00.000Z",
+    image: logitechC270HdWebcam,
+    description:
+      "Reliable HD webcam for video calls, live streaming and simple surveillance monitoring with clear image quality.",
+    features: [
+      "720p HD video",
+      "Built-in noise-reducing mic",
+      "Easy plug-and-play setup",
+      "Compatible with major video apps",
+    ],
+    specs: {
+      Brand: "Logitech",
+      Model: "C270",
+      Resolution: "720p HD",
+      Connectivity: "USB",
+      Warranty: "6 months",
+    },
+  },
+  {
+    id: "smart-wifi-camera",
+    name: "Smart WiFi Camera",
+    category: "cctv",
+    brand: "VI Connect",
+    price: 175000,
+    createdAt: "2026-06-20T00:00:00.000Z",
+    image: smartWifiCamera,
+    description:
+      "WiFi-enabled security camera for easy installation, mobile monitoring and instant alerts around your property.",
+    features: [
+      "Wireless setup",
+      "Remote view from mobile",
+      "Night vision capability",
+      "Motion-triggered notifications",
+    ],
+    specs: {
+      Brand: "VI Connect",
+      Type: "WiFi Security Camera",
+      Resolution: "1080p",
+      Connectivity: "Wi-Fi",
+      Alert: "Motion detection",
+      Warranty: "12 months",
+    },
+  },
+
   // ===== MISCELLANEOUS ELECTRONICS =====
   {
     id: "Cartridge_Canon_Toner057",
@@ -422,6 +560,29 @@ export const products: Product[] = [
       Frequency: "13.56 MHz",
       Connectivity: "USB / serial",
       Warranty: "12 months",
+    },
+  },
+  {
+    id: "all-types-computer-batteries-and-cables",
+    name: "All Types of Computer Batteries and Cables",
+    category: "computers",
+    brand: "Generic",
+    price: 45000,
+    createdAt: "2026-06-09T00:00:00.000Z",
+    image: allTypeOfComputerBatteriesandItsCables,
+    description:
+      "A practical collection of computer batteries and essential cables for laptops, desktops and other devices, suitable for repairs and replacements.",
+    features: [
+      "Wide range of battery and cable options",
+      "Useful for repairs and maintenance",
+      "Compatible with common computer setups",
+      "Durable and reliable everyday use",
+    ],
+    specs: {
+      Brand: "Generic",
+      Type: "Computer Batteries & Cables",
+      Compatibility: "Laptops, desktops, peripheral devices",
+      Warranty: "3 months",
     },
   },
 
