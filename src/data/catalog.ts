@@ -21,6 +21,10 @@ import smartNetCamera from "@/assets/smart_net_camera.jpg";
 import televisionHdColorKit from "@/assets/telivision_hd_colorkit.jpg";
 import logitechC270HdWebcam from "@/assets/Logitech_C270_HdWebcam.jpg";
 import smartWifiCamera from "@/assets/Smart_wifi_Camera.jpg";
+import BenQProjector from "@/assets/BenQProjector.jpg";
+import AcerProjector from "@/assets/AcerProjector.jpg";
+import EpsonProjector from "@/assets/EpsonProjector.jpg";
+import allInOneTouchscreenPos from "@/assets/All-in-OneTouchScreen-POS.jpeg";
 
 // Printer product images (CDN assets)
 import hpP2055dImg from "@/assets/printers/HP_LaserJet_P2055d_Printer.jpg";
@@ -72,6 +76,24 @@ export const categories: Category[] = [
     name: "Printers",
     description: "Laser, inkjet and multifunction printers for home and office.",
     icon: "Printer",
+  },
+  {
+    slug: "projectors",
+    name: "Projectors",
+    description: "Presentation and entertainment projectors for meetings, training and home viewing.",
+    icon: "Projector",
+  },
+  {
+    slug: "pos",
+    name: "POS & Touchscreens",
+    description: "Modern retail and hospitality checkout solutions with touchscreen displays.",
+    icon: "Monitor",
+  },
+  {
+    slug: "computer-accessories",
+    name: "Computer Accessories",
+    description: "Useful add-ons and peripherals that improve everyday computing and productivity.",
+    icon: "Usb",
   },
 ];
 
@@ -388,6 +410,109 @@ export const products: Product[] = [
       Resolution: "1080p",
       Connectivity: "Wi-Fi",
       Alert: "Motion detection",
+      Warranty: "12 months",
+    },
+  },
+
+  // ===== PROJECTORS & POS =====
+  {
+    id: "benq-projector",
+    name: "BenQ Projector",
+    category: "projectors",
+    brand: "BenQ",
+    price: 1450000,
+    createdAt: "2026-07-10T00:00:00.000Z",
+    image: BenQProjector,
+    description:
+      "Bright and reliable projector for classrooms, meetings and home entertainment with sharp image clarity and easy setup.",
+    features: [
+      "Full HD projection with vivid color",
+      "Portable and easy to install",
+      "Ideal for presentations and training",
+      "Long lamp life with low maintenance",
+    ],
+    specs: {
+      Brand: "BenQ",
+      Model: "MW560",
+      Resolution: "1920x1080",
+      Brightness: "3600 lumens",
+      Connectivity: "HDMI, VGA, USB",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "acer-projector",
+    name: "Acer Projector",
+    category: "projectors",
+    brand: "Acer",
+    price: 1280000,
+    createdAt: "2026-07-08T00:00:00.000Z",
+    image: AcerProjector,
+    description:
+      "Stylish projector with clear output and flexible settings for business meetings, classrooms and movie nights.",
+    features: [
+      "High-contrast display for sharper visuals",
+      "Compact form for easy mobility",
+      "Supports modern HDMI connections",
+      "Quiet operation for focused presentations",
+    ],
+    specs: {
+      Brand: "Acer",
+      Model: "K138ST",
+      Resolution: "1280x720",
+      Brightness: "3000 lumens",
+      Connectivity: "HDMI, VGA, Audio",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "epson-projector",
+    name: "Epson Projector",
+    category: "projectors",
+    brand: "Epson",
+    price: 1320000,
+    createdAt: "2026-07-06T00:00:00.000Z",
+    image: EpsonProjector,
+    description:
+      "Dependable Epson projector for professional presentations and immersive viewing with crisp detail and balanced color.",
+    features: [
+      "Excellent image brightness and clarity",
+      "Flexible connectivity for laptops and media devices",
+      "Energy-efficient performance",
+      "Built for boardrooms and educational spaces",
+    ],
+    specs: {
+      Brand: "Epson",
+      Model: "EB-X05",
+      Resolution: "1024x768",
+      Brightness: "3200 lumens",
+      Connectivity: "HDMI, USB, VGA",
+      Warranty: "12 months",
+    },
+  },
+  {
+    id: "all-in-one-touchscreen-pos",
+    name: "All-in-One Touchscreen POS",
+    category: "pos",
+    brand: "VI Connect",
+    price: 1600000,
+    createdAt: "2026-07-03T00:00:00.000Z",
+    image: allInOneTouchscreenPos,
+    description:
+      "Modern touchscreen point-of-sale terminal for retail counters with fast processing, sleek design and easy checkout workflows.",
+    features: [
+      "Responsive all-in-one touchscreen display",
+      "Fast transaction processing for busy counters",
+      "Clean cable-free look for retail setups",
+      "Easy integration with payment and inventory tools",
+    ],
+    specs: {
+      Brand: "VI Connect",
+      Type: "Touchscreen POS",
+      Display: "15.6 inch",
+      Processor: "Intel i3",
+      Storage: "128GB SSD",
+      Connectivity: "USB, HDMI, LAN",
       Warranty: "12 months",
     },
   },

@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ProductCard } from "@/components/ProductCard";
 import { CountUp } from "@/components/CountUp";
-import { products } from "@/data/catalog";
+import { categories, products } from "@/data/catalog";
 import heroImage from "@/assets/hero.jpg";
 import heroImage2 from "@/assets/hero-2.jpg";
 import heroImage3 from "@/assets/hero-3.jpg";
@@ -38,7 +38,16 @@ const testimonials = [
 ];
 
 function HomePage() {
-  const featured = products.slice(0, 8);
+  const featured = [
+    "hp-laserjet-pro-3101fdwe",
+    "all-types-computer-batteries-and-cables",
+    ...categories.flatMap((category) => {
+      const match = products.find((product) => product.category === category.slug);
+      return match ? [match.id] : [];
+    }),
+  ]
+    .map((id) => products.find((product) => product.id === id))
+    .filter((product): product is (typeof products)[number] => Boolean(product));
   const [slide, setSlide] = useState(0);
 
   useEffect(() => {
@@ -76,8 +85,8 @@ function HomePage() {
             <span className="text-gradient-brand">& Printing Solutions</span>
           </h1>
           <p className="mt-5 text-md max-w-xl drop-shadow-md text-white font-medium">
-            We supply reliable computers, printers, CCTV cameras,IT services and accessories for businesses, schools, institutions
-            and individuals — with expert setup and support across Rwanda.
+            We supply and purchase wholesale reliable computers, printers, CCTV cameras, IT services, 
+            and accessories for businesses, schools, institutions, and individuals — offering expert setup and support across Rwanda.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg">
@@ -144,9 +153,9 @@ function HomePage() {
             <Link to="/products">Shop all →</Link>
           </Button>
         </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {featured.map((p) => (
-            <ProductCard key={p.id} product={p} />
+            <ProductCard key={p.id} product={p} showCategoryBadge={false} />
           ))}
         </div>
       </section>
