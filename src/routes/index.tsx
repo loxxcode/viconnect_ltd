@@ -116,9 +116,7 @@ function HomePage() {
             Quality Computers <span className="text-gradient-brand">& Printing Solutions</span>
           </h1>
           <p className="mt-5 text-md max-w-xl drop-shadow-md text-white font-medium">
-            We supply and purchase wholesale reliable computers, printers, CCTV cameras, IT
-            services, and accessories for businesses, schools, institutions, and individuals —
-            offering expert setup and support across Rwanda.
+            Empowering Businesses with Quality IT Products & Professional Technology Solutions. Wholesale & Retail | Installation | Support.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg">
