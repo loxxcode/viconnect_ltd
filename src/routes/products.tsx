@@ -95,9 +95,6 @@ function ProductsPage() {
     <div className="container-page py-12">
       <div className="mb-8">
         <h1 className="text-3xl md:text-4xl font-bold">Products</h1>
-        <p className="text-muted-foreground mt-2">
-          {filtered.length} {filtered.length === 1 ? "product" : "products"} available
-        </p>
       </div>
 
       {/* Filters */}
@@ -114,7 +111,7 @@ function ProductsPage() {
             className="pl-9 h-11"
           />
         </div>
-        <Select value={category} onValueChange={(v) => update({ category: v })}>
+        {/* <Select value={category} onValueChange={(v) => update({ category: v })}>
           <SelectTrigger className="h-11"><SelectValue placeholder="Category" /></SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All Categories</SelectItem>
@@ -133,8 +130,8 @@ function ProductsPage() {
               <SelectItem key={b} value={b}>{b}</SelectItem>
             ))}
           </SelectContent>
-        </Select>
-        <Select value={sort} onValueChange={(v) => update({ sort: v })}>
+        </Select> */}
+        {/* <Select value={sort} onValueChange={(v) => update({ sort: v })}>
           <SelectTrigger className="h-11"><SelectValue placeholder="Sort" /></SelectTrigger>
           <SelectContent>
             <SelectItem value="newest">Newest</SelectItem>
@@ -142,7 +139,7 @@ function ProductsPage() {
             <SelectItem value="price-desc">Price: High → Low</SelectItem>
             <SelectItem value="alpha">Alphabetical</SelectItem>
           </SelectContent>
-        </Select>
+        </Select> */}
       </div>
 
       {shown.length === 0 ? (

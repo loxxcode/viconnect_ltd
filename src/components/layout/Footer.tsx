@@ -6,6 +6,7 @@ const productCats = [
   { slug: "computers", name: "Computers" },
   { slug: "cctv", name: "CCTV Cameras" },
   { slug: "printers", name: "Printers" },
+  { slug: "projectors", name: "Projectors" },
 ];
 
 const services = [
@@ -26,7 +27,7 @@ export function Footer() {
             <img
               src={logoImage}
               alt="VI Connect Network Services logo"
-              className="size-10 rounded-lg object-contain group-hover:scale-105 transition-transform"
+              className="size-14 rounded-lg object-contain group-hover:scale-105 transition-transform"
             />
             <span className="flex flex-col leading-tight">
               <span className="font-display font-bold text-sm sm:text-base text-white">
@@ -43,9 +44,8 @@ export function Footer() {
           </p>
           <div className="flex gap-3 mt-5">
             {[
-              { Icon: Facebook, label: "Facebook", href: "#" },
-              { Icon: Instagram, label: "Instagram", href: "#" },
-              { Icon: Linkedin, label: "LinkedIn", href: "#" },
+              { Icon: Facebook, label: "Facebook", href: "https://web.facebook.com/profile.php?id=61592340235006" },
+              { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/viconnectnets/" },
               { Icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/250788825646" },
             ].map(({ Icon, label, href }) => (
               <a

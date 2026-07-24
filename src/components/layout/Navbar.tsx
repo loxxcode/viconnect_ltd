@@ -27,7 +27,7 @@ function Logo() {
       <img
         src={logoImage}
         alt="VI Connect Network Services logo"
-        className="size-10 rounded-lg object-contain group-hover:scale-105 transition-transform"
+        className="size-14 rounded-lg object-contain group-hover:scale-105 transition-transform"
       />
       <span className="flex flex-col leading-tight">
         <span className="font-display font-bold text-sm sm:text-base text-white">VI CONNECT</span>
