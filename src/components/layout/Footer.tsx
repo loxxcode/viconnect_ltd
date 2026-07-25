@@ -53,6 +53,7 @@ export function Footer() {
               <a
                 key={label}
                 href={href}
+                target="_blank"
                 aria-label={label}
                 className="grid place-items-center size-9 rounded-full border border-emerald-200 text-white hover:bg-white hover:text-emerald-600 transition-colors"
               >
