@@ -1,6 +1,7 @@
   import { Link } from "@tanstack/react-router";
 import logoImage from "@/assets/logo.jpeg";
-import { Facebook, Instagram, Linkedin, Mail, MessageCircle, Phone, Zap } from "lucide-react";
+import { Facebook, Instagram, Youtube, Mail, MessageCircle, Phone, Zap } from "lucide-react";
+import Twitter from "@/assets/twitter.svg";
 
 const productCats = [
   { slug: "computers", name: "Computers" },
@@ -46,15 +47,16 @@ export function Footer() {
             {[
               { Icon: Facebook, label: "Facebook", href: "https://web.facebook.com/profile.php?id=61592340235006" },
               { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/viconnectnets/" },
-              { Icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/250788825646" },
-            ].map(({ Icon, label, href }) => (
+              { label: "Twitter", href: "https://x.com/VICONNECT_LTD", icon: <img src={Twitter} alt="Twitter" className="size-6" /> },
+              { Icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@viconnetNetwork" },
+            ].map(({ Icon, label, href, icon }) => (
               <a
                 key={label}
                 href={href}
                 aria-label={label}
                 className="grid place-items-center size-9 rounded-full border border-emerald-200 text-white hover:bg-white hover:text-emerald-600 transition-colors"
               >
-                <Icon className="size-4" />
+                {icon ?? (Icon ? <Icon className="size-4" /> : null)}
               </a>
             ))}
           </div>

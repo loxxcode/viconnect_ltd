@@ -7,10 +7,11 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone } from "lucide-react";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import whatsappImage from "../assets/whatsapp.png";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { ThemeProvider } from "../lib/theme";
 import { Navbar } from "../components/layout/Navbar";
@@ -146,10 +147,10 @@ function RootComponent() {
             href="https://wa.me/250788825646"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-600 text-white shadow-lg shadow-emerald-600/20 transition hover:bg-emerald-700"
+            className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-none shadow-lg shadow-emerald-600/20 transition hover:bg-emerald-700"
             aria-label="WhatsApp"
           >
-            <MessageCircle className="size-5" />
+            <img src={whatsappImage} alt="WhatsApp" className="h-full w-full object-contain" />
           </a>
           <a
             href="tel:0788825646"
