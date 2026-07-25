@@ -77,7 +77,7 @@ function AboutPage() {
             About <span className="text-gradient-brand">VI CONNECT</span>
           </h1>
           <p className="text-lg text-muted-foreground mt-5">
-            VI CONNECT Network Services Ltd is a trusted technology company, specializing in the
+            VI CONNECT NETWORK SERVICES LTD is a trusted technology company, specializing in the
             supply of high-quality IT equipment, and their accessories. We also provide professional
             IT services, including: Installation, maintenance, technical support, networking
             solutions, and technology consulting. We are committed to delivering reliable products,
@@ -124,7 +124,7 @@ function AboutPage() {
         </Card>
       </section>
 
-      <section className="bg-secondary/40 border-y">
+      {/* <section className="bg-secondary/40 border-y">
         <div className="container-page py-14">
           <h2 className="text-3xl font-bold text-center">Our Core Values</h2>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 mt-10">
@@ -137,15 +137,15 @@ function AboutPage() {
                     </div>
                     <h3 className="font-semibold">{title}</h3>
                   </div>
-                  {/* <Icon className="size-8 text-primary mb-3" />
-                  <h3 className="font-semibold">{title}</h3> */}
+                  <Icon className="size-8 text-primary mb-3" />
+                  <h3 className="font-semibold">{title}</h3>
                   <p className="text-sm text-muted-foreground mt-2">{text}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
