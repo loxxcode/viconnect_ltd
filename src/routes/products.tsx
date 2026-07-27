@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { z } from "zod";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -47,6 +47,10 @@ function ProductsPage() {
   const brand = params.brand ?? "all";
   const sort = params.sort ?? "newest";
 
+  useEffect(() => {
+    setQ(params.q ?? "");
+  }, [params.q]);
+
   const update = (patch: Record<string, string | undefined>) => {
     navigate({
       search: (prev: z.infer<typeof searchSchema>) => {
@@ -66,12 +70,21 @@ function ProductsPage() {
     if (brand !== "all") list = list.filter((p) => p.brand === brand);
     if (q.trim()) {
       const needle = q.toLowerCase();
-      list = list.filter(
-        (p) =>
-          p.name.toLowerCase().includes(needle) ||
-          p.description.toLowerCase().includes(needle) ||
-          p.brand.toLowerCase().includes(needle),
-      );
+      list = list.filter((p) => {
+        const haystack = [
+          p.id,
+          p.name,
+          p.category,
+          p.brand,
+          p.description,
+          ...p.features,
+          ...Object.values(p.specs),
+        ]
+          .join(" ")
+          .toLowerCase();
+
+        return haystack.includes(needle);
+      });
     }
     switch (sort) {
       case "price-asc":
@@ -105,7 +118,9 @@ function ProductsPage() {
             placeholder="Search products..."
             value={q}
             onChange={(e) => {
-              setQ(e.target.value);
+              const value = e.target.value;
+              setQ(value);
+              update({ q: value });
               setVisible(PAGE_SIZE);
             }}
             className="pl-9 h-11"
