@@ -19,9 +19,9 @@ import { createPageHead } from "@/lib/seo";
 export const Route = createFileRoute("/services")({
   head: () =>
     createPageHead({
-      title: "Services — VI CONNECT NETWORKSERVICES LTD",
+      title: "Services — VI CONNECT Electronics & Networking in Kigali",
       description:
-        "Network installation, CCTV, IT consulting, fiber installation, hardware upgrades and technical support.",
+        "Professional electronics, CCTV, network installation, IT consulting and technical support in Kigali, Rwanda. We deliver, install and maintain computers and networking systems.",
       pathname: "/services",
     }),
   component: ServicesPage,

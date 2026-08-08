@@ -78,9 +78,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 const SITE_TITLE =
-  "VI CONNECT NETWORKSERVICES LTD — Electronics, Networking & CCTV Solutions";
+  "VI CONNECT — NETWORK SERVICES — Premium Electronics, Computers & Networking in Kigali, Rwanda";
 const SITE_DESC =
-  "Trusted IT hardware, networking equipment, CCTV systems, and professional installation services for businesses, schools and homes in Rwanda.";
+  "Your trusted electronics and computer store in Kigali, Rwanda. Shop laptops, printers, CCTV, networking gear, accessories, and installation services with fast delivery.";
 const SITE_NAME = "VI CONNECT NETWORKSERVICES LTD";
 const SITE_URL = "https://www.viconnect.rw";
 const DEFAULT_IMAGE = "https://www.viconnect.rw/hero.jpg";

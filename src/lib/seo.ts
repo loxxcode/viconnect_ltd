@@ -1,7 +1,7 @@
 export const SITE_URL = "https://www.viconnect.rw";
 export const SITE_NAME = "VI CONNECT NETWORKSERVICES LTD";
 export const DEFAULT_IMAGE = "https://www.viconnect.rw/favicon.jpeg";
-export const DEFAULT_IMAGE_ALT = "VI CONNECT technology and hardware showroom";
+export const DEFAULT_IMAGE_ALT = "VI CONNECT electronics and technology store in Kigali Rwanda";
 
 interface PageHeadOptions {
   title: string;

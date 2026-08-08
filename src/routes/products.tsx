@@ -26,8 +26,9 @@ export const Route = createFileRoute("/products")({
   validateSearch: searchSchema,
   head: () =>
     createPageHead({
-      title: "Products — VI CONNECT NETWORKSERVICES LTD",
-      description: "Browse our catalog of computers and printers for home, school and business.",
+      title: "Products — VI CONNECT Electronics, Computers & Accessories in Kigali",
+      description:
+        "Browse our catalog of electronics, computers, printers and accessories in Kigali, Rwanda. Find hardware, networking devices and fast delivery for home, school and business.",
       pathname: "/products",
     }),
   component: ProductsPage,

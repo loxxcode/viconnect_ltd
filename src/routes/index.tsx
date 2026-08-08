@@ -24,9 +24,9 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/")({
   head: () =>
     createPageHead({
-      title: "VI CONNECT NETWORKSERVICES LTD — Electronics, Networking & CCTV Solutions",
+      title: "VI CONNECT — Premium Electronics, Computers & Networking in Kigali, Rwanda",
       description:
-        "Empowering businesses in Rwanda with IT hardware, networking equipment, CCTV systems and reliable installation services.",
+        "Your trusted electronics and computer store in Kigali, Rwanda. Shop laptops, printers, CCTV, networking devices, accessories, and installation services with fast delivery.",
       pathname: "/",
       image: "https://www.viconnect.rw/hero.jpg",
       imageAlt: "VI CONNECT homepage featuring electronics and networking solutions",
