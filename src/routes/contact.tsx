@@ -6,23 +6,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { createPageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — VI CONNECT NETWORKSERVICES LTD" },
-      {
-        name: "description",
-        content:
-          "Get in touch with VI CONNECT NETWORKSERVICES LTD. Email viconnectnets@gmail.com or call 0788825646.",
-      },
-      { property: "og:title", content: "Contact VI CONNECT NETWORKSERVICES LTD" },
-      {
-        property: "og:description",
-        content: "Reach us by email, phone, or the contact form on our website.",
-      },
-    ],
-  }),
+  head: () =>
+    createPageHead({
+      title: "Contact — VI CONNECT NETWORKSERVICES LTD",
+      description:
+        "Get in touch with VI CONNECT NETWORKSERVICES LTD. Email viconnectnets@gmail.com or call 0788825646.",
+      pathname: "/contact",
+    }),
   component: ContactPage,
 });
 

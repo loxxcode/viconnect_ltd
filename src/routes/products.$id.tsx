@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ProductCard } from "@/components/ProductCard";
 import { categories, formatRwf, getProduct, getRelated } from "@/data/catalog";
+import { createPageHead } from "@/lib/seo";
 
 import type { Product } from "@/data/catalog";
 
@@ -19,16 +20,13 @@ export const Route = createFileRoute("/products/$id")({
       return { meta: [{ title: "Product not found" }, { name: "robots", content: "noindex" }] };
     }
     const { product } = loaderData;
-    return {
-      meta: [
-        { title: `${product.name} — VI CONNECT` },
-        { name: "description", content: product.description },
-        { property: "og:title", content: `${product.name} — VI CONNECT` },
-        { property: "og:description", content: product.description },
-        { property: "og:image", content: product.image },
-        { name: "twitter:image", content: product.image },
-      ],
-    };
+    return createPageHead({
+      title: `${product.name} — VI CONNECT`,
+      description: product.description,
+      pathname: `/products/${product.id}`,
+      image: product.image,
+      imageAlt: product.name,
+    });
   },
   notFoundComponent: () => (
     <div className="container-page py-24 text-center">

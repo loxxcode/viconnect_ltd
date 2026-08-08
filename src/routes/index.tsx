@@ -18,9 +18,19 @@ import { categories, products } from "@/data/catalog";
 import heroImage from "@/assets/hero.jpg";
 import heroImage2 from "@/assets/hero-2.jpg";
 import heroImage3 from "@/assets/hero-3.jpg";
+import { createPageHead } from "@/lib/seo";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/")({
+  head: () =>
+    createPageHead({
+      title: "VI CONNECT NETWORKSERVICES LTD — Electronics, Networking & CCTV Solutions",
+      description:
+        "Empowering businesses in Rwanda with IT hardware, networking equipment, CCTV systems and reliable installation services.",
+      pathname: "/",
+      image: "https://www.viconnect.rw/hero.jpg",
+      imageAlt: "VI CONNECT homepage featuring electronics and networking solutions",
+    }),
   component: HomePage,
 });
 

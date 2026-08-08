@@ -78,9 +78,12 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 const SITE_TITLE =
-  "VI CONNECT NETWORKSERVICES LTD — Electronic Components & Networking";
+  "VI CONNECT NETWORKSERVICES LTD — Electronics, Networking & CCTV Solutions";
 const SITE_DESC =
-  "Reliable electronic parts, networking devices, CCTV systems, computer accessories and technical solutions for businesses, technicians and individuals.";
+  "Trusted IT hardware, networking equipment, CCTV systems, and professional installation services for businesses, schools and homes in Rwanda.";
+const SITE_NAME = "VI CONNECT NETWORKSERVICES LTD";
+const SITE_URL = "https://www.viconnect.rw";
+const DEFAULT_IMAGE = "https://www.viconnect.rw/hero.jpg";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -91,16 +94,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: SITE_DESC },
       { name: "author", content: "VI CONNECT NETWORKSERVICES LTD" },
       { name: "theme-color", content: "#16A34A" },
+      { property: "og:site_name", content: "VI CONNECT NETWORKSERVICES LTD" },
       { property: "og:title", content: SITE_TITLE },
       { property: "og:description", content: SITE_DESC },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:image", content: DEFAULT_IMAGE },
+      { property: "og:image:alt", content: "VI CONNECT technology and hardware showroom" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: SITE_TITLE },
       { name: "twitter:description", content: SITE_DESC },
+      { name: "twitter:image", content: DEFAULT_IMAGE },
+      { name: "twitter:creator", content: "@VICONNECTRW" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.jpeg", type: "image/jpeg" },
+      { rel: "canonical", href: SITE_URL },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -115,11 +125,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+const ORGANIZATION_SCHEMA = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: `${SITE_URL}/favicon.jpeg`,
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+250788825646",
+      contactType: "customer service",
+      areaServed: "RW",
+      availableLanguage: ["English"],
+    },
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Kigali",
+    addressCountry: "RW",
+  },
+});
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ORGANIZATION_SCHEMA }} />
       </head>
       <body>
         {children}

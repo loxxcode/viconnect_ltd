@@ -2,23 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Award, Eye, HandshakeIcon, Rocket, ShieldCheck, Target, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { CountUp } from "@/components/CountUp";
+import { createPageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Us — VI CONNECT NETWORKSERVICES LTD" },
-      {
-        name: "description",
-        content:
-          "Learn about VI CONNECT NETWORKSERVICES LTD — our mission, vision, values and team.",
-      },
-      { property: "og:title", content: "About VI CONNECT NETWORKSERVICES LTD" },
-      {
-        property: "og:description",
-        content: "Our mission, vision and team behind VI CONNECT NETWORKSERVICES LTD.",
-      },
-    ],
-  }),
+  head: () =>
+    createPageHead({
+      title: "About Us — VI CONNECT NETWORKSERVICES LTD",
+      description:
+        "Learn about VI CONNECT NETWORKSERVICES LTD — our mission, vision, values and team.",
+      pathname: "/about",
+    }),
   component: AboutPage,
 });
 

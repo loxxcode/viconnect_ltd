@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/select";
 import { ProductCard } from "@/components/ProductCard";
 import { brands, categories, products } from "@/data/catalog";
+import { createPageHead } from "@/lib/seo";
 
 const searchSchema = z.object({
   category: z.string().optional(),
@@ -23,14 +24,12 @@ const searchSchema = z.object({
 
 export const Route = createFileRoute("/products")({
   validateSearch: searchSchema,
-  head: () => ({
-    meta: [
-      { title: "Products — VI CONNECT NETWORK SERVICES LTD" },
-      { name: "description", content: "Browse our catalog of computers and printers for home, school and business." },
-      { property: "og:title", content: "Products — VI CONNECT NETWORKSERVICES LTD" },
-      { property: "og:description", content: "Browse our catalog of computers and printers." },
-    ],
-  }),
+  head: () =>
+    createPageHead({
+      title: "Products — VI CONNECT NETWORKSERVICES LTD",
+      description: "Browse our catalog of computers and printers for home, school and business.",
+      pathname: "/products",
+    }),
   component: ProductsPage,
 });
 

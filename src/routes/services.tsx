@@ -14,23 +14,16 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { createPageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Services — VI CONNECT NETWORKSERVICES LTD" },
-      {
-        name: "description",
-        content:
-          "Network installation, CCTV, IT consulting, fiber installation, hardware upgrades and technical support.",
-      },
-      { property: "og:title", content: "Services — VI CONNECT NETWORKSERVICES LTD" },
-      {
-        property: "og:description",
-        content: "Professional network, CCTV and IT services for businesses and individuals.",
-      },
-    ],
-  }),
+  head: () =>
+    createPageHead({
+      title: "Services — VI CONNECT NETWORKSERVICES LTD",
+      description:
+        "Network installation, CCTV, IT consulting, fiber installation, hardware upgrades and technical support.",
+      pathname: "/services",
+    }),
   component: ServicesPage,
 });
 
