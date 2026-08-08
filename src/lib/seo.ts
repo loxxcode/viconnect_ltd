@@ -19,11 +19,14 @@ export function createPageHead({
   imageAlt = DEFAULT_IMAGE_ALT,
 }: PageHeadOptions) {
   const href = `${SITE_URL}${pathname}`;
+  const keywords =
+    "vi connect rwanda, viconnect rwanda, vi connect network rwanda, vi connect networkservice rwanda, vi connect networkservice rwanda, electronics, computers, networking, CCTV, Kigali, Rwanda";
 
   return {
     meta: [
       { title },
       { name: "description", content: description },
+      { name: "keywords", content: keywords },
       { name: "robots", content: "index,follow" },
       { property: "og:site_name", content: SITE_NAME },
       { property: "og:title", content: title },
