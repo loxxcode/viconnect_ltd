@@ -109,7 +109,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "shortcut icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "icon", href: "/favicon.jpeg", type: "image/jpeg" },
+      { rel: "apple-touch-icon", href: "/favicon.ico" },
       { rel: "canonical", href: SITE_URL },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -147,12 +150,47 @@ const ORGANIZATION_SCHEMA = JSON.stringify({
   },
 });
 
+const LOCALBUSINESS_SCHEMA = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: SITE_NAME,
+  image: [`${SITE_URL}/favicon.jpeg`],
+  "@id": SITE_URL,
+  url: SITE_URL,
+  telephone: "+250788825646",
+  email: "viconnectnets@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "",
+    addressLocality: "Kigali",
+    addressRegion: "Kigali",
+    addressCountry: "RW",
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      opens: "08:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Saturday"],
+      opens: "09:00",
+      closes: "16:00",
+    },
+  ],
+  priceRange: "$$",
+  sameAs: ["https://www.facebook.com/viconnect","https://wa.me/250788825646"],
+});
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
         <HeadContent />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ORGANIZATION_SCHEMA }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: LOCALBUSINESS_SCHEMA }} />
       </head>
       <body>
         {children}
